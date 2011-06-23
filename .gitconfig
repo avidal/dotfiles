@@ -1,0 +1,21 @@
+[user]
+	name = Alex Vidal
+	email = alex.vidal@gmail.com
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+	ui = auto
+[core]
+    excludesfile = "~/.gitexcludes"
+[alias]
+    br = branch -a
+	ci = commit -a
+	st = status -s --ignore-submodules
+	co = checkout
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    root = !pwd
+[push]
+	default = matching
+[rerere]
+    enabled = true
