@@ -1,0 +1,4 @@
+*.sw[po]
+*.py[co]
+.DS_Store
+Thumbs.db
