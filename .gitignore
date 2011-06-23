@@ -1,0 +1,56 @@
+# Ignore everything by default
+*
+
+# zsh{{{
+
+!.zshrc
+!.zsh
+!.zsh/*
+
+
+# sensitive settings
+.zsh/local
+
+# swap files
+.zsh/*.sw[po]
+
+# }}}
+
+
+# git {{{
+
+!.gitconfig
+# ignore file for this repository
+!.gitignore
+# global ignore file
+!.gitexcludes
+
+# }}}
+
+
+# vim {{{
+
+!.vimrc
+!.vim/*
+# do want to ignore netrw history file
+.vim/.netrwhist
+
+!.vim/autoload/*
+!.vim/colors/*
+!.vim/doc/*
+!.vim/ftdetect/*
+!.vim/ftplugin/*
+!.vim/indent/*
+!.vim/plugin/*
+!.vim/spell/*
+!.vim/syntax/*
+
+# because gitignore doesn't work recursively, manually set non-ignore
+# for various depths of pathogen bundles
+!.vim/bundle
+!.vim/bundle/*
+!.vim/bundle/*/*
+!.vim/bundle/*/*/*
+!.vim/bundle/*/*/*/*
+
+# }}}
