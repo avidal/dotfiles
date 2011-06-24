@@ -53,7 +53,7 @@ function shortpath() {
     _pwd=`pwd | sed "s#$HOME#~#"`
     if [[ $_pwd == "~" ]]; then
         _dirname=$_pwd
-     lse
+    else
         _dirname=`dirname "$_pwd" | sed -r "s/\/(.)[^\/]*/\/\1/g"`
         if [[ $_dirname == "/" ]]; then
             _dirname=""
