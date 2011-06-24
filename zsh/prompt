@@ -75,7 +75,7 @@ function virtualenv_() {
     if [[ -s $_rvm && -z $_venv ]]; then
         # Just show Ruby gemset.  I don't use different interpreter lines, nor
         # do I care about patchlevel.
-        _venv=`$_rvm_home/bin/rvm-prompt g`
+        #_venv=`$_rvm_home/bin/rvm-prompt g`
         if [[ "$_venv" != "system" && -n $_venv ]]; then
             venv=$_venv
         fi
