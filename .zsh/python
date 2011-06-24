@@ -1,0 +1,27 @@
+# virtualenvwrapper
+
+# shamelessly taken from github.com/bitprophet/dotfiles
+
+# Shell hooks; look in all possible locations and for both old and new versions
+# of the script, just in case I find myself on an older system.
+ROOTS=(/usr/bin /usr/local/bin)
+SUFFIXES=(_bashrc .sh)
+for root in $ROOTS; do
+    for suffix in $SUFFIXES; do
+        p=$root/virtualenvwrapper$suffix
+        if [[ -f $p ]]; then
+            virtualenvwrapper=$p
+        fi
+    done
+done
+
+export WORKON_HOME=~/.virtualenvs
+
+[[ -n "$virtualenvwrapper" && -f $virtualenvwrapper ]] && source $virtualenvwrapper
+
+# pip settings
+
+export PIP_RESPECT_VIRTUALENV=true
+export PIP_VIRTUALENV_BASE=$WORKON_HOME
+export PIP_LOG_FILE='/tmp/pip-log.txt'
+export PIP_DOWNLOAD_CACHE='/tmp/pip-cache'
