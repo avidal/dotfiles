@@ -1,6 +1,15 @@
 export ZSH=~/.zsh
 
 dotfiles=(
+    exports
+    platform
+    completion
+    aliases
+    history
+    python
+    ruby
+    wk
+    prompt
     local
 )
 
