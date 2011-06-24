@@ -3,66 +3,67 @@
 
 # zsh{{{
 
-!.zshrc
-!.zsh
-!.zsh/*
+!zshrc
+!zsh
+!zsh/*
 
 
 # sensitive settings
-.zsh/local
+zsh/local
 
 # swap files
-.zsh/*.sw[po]
+zsh/*.sw[po]
 
 # }}}
 
 
 # git {{{
 
-!.gitconfig
+!gitconfig
+# global ignore file
+!gitexcludes
+
 # ignore file for this repository
 !.gitignore
 # submodule file (ex: used for vim bundles)
 !.gitmodules
-# global ignore file
-!.gitexcludes
 
 # }}}
 
 
 # vim {{{
 
-!.vimrc
-!.vim
-!.vim/*
+!vimrc
+!vim
+!vim/*
 # do want to ignore netrw history file
-.vim/.netrwhist
+vim/.netrwhist
 
-!.vim/autoload/*
-!.vim/colors/*
-!.vim/doc/*
-!.vim/ftdetect/*
-!.vim/ftplugin/*
-!.vim/indent/*
-!.vim/plugin/*
-!.vim/spell/*
-!.vim/syntax/*
+!vim/autoload/*
+!vim/colors/*
+!vim/doc/*
+!vim/ftdetect/*
+!vim/ftplugin/*
+!vim/indent/*
+!vim/plugin/*
+!vim/spell/*
+!vim/syntax/*
 
-!.vim/.tmp
-.vim/.tmp/*
-!.vim/.tmp/.gitkeep
+!vim/.tmp
+vim/.tmp/*
+!vim/.tmp/.gitkeep
 
-!.vim/.undo
-.vim/.undo/*
-!.vim/.undo/.gitkeep
+!vim/.undo
+vim/.undo/*
+!vim/.undo/.gitkeep
 
 # because gitignore doesn't work recursively, manually set non-ignore
 # for various depths of pathogen bundles
-!.vim/bundle
-!.vim/bundle/*
-!.vim/bundle/*/*
-!.vim/bundle/*/*/*
-!.vim/bundle/*/*/*/*
+!vim/bundle
+!vim/bundle/*
+!vim/bundle/*/*
+!vim/bundle/*/*/*
+!vim/bundle/*/*/*/*
 
 # }}}
 
