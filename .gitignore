@@ -22,6 +22,8 @@
 !.gitconfig
 # ignore file for this repository
 !.gitignore
+# submodule file (ex: used for vim bundles)
+!.gitmodules
 # global ignore file
 !.gitexcludes
 
