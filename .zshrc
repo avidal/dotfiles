@@ -5,6 +5,6 @@ dotfiles=(
 )
 
 for file in $dotfiles; do
-    file=$ZSH/$file.zsh
+    file=$ZSH/$file
     [[ -f $file ]] && source $file
 done

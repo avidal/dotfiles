@@ -429,6 +429,10 @@ if has("autocmd")
         au BufNewFile,BufRead *.md set ft=markdown
     augroup end "}}}
 endif
+
+" anything under .zsh should be marked as a zsh file
+autocmd BufNewFile,BufRead ~/.zsh* setlocal filetype=zsh
+
 " }}}
 
 " restore cursor position when reopening files

@@ -1,0 +1,19 @@
+# Aliases that I always want available
+
+alias svim='sudo vim'
+alias stail='sudo tail'
+alias svs='sudo supervisorctl'
+
+# Alias package managers to always use sudo
+alias apt-get='sudo apt-get'
+alias apt-cache='sudo apt-cache'
+alias apt-file='sudo apt-file'
+
+# if hub is available, alias git to hub
+if [[ -e `which hub 2>/dev/null` ]]; then
+    alias git=hub
+fi
+
+alias rmpyc='rm **/*.pyc'
+alias ports='sudo lsof -i -P -sTCP:LISTEN'
+alias ack='ack -a'
