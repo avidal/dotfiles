@@ -46,6 +46,14 @@
 !.vim/spell/*
 !.vim/syntax/*
 
+!.vim/.tmp
+.vim/.tmp/*
+!.vim/.tmp/.gitkeep
+
+!.vim/.undo
+.vim/.undo/*
+!.vim/.undo/.gitkeep
+
 # because gitignore doesn't work recursively, manually set non-ignore
 # for various depths of pathogen bundles
 !.vim/bundle

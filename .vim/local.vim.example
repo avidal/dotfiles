@@ -1,0 +1,2 @@
+" local.vim should be a symlink to a machine-specific config and will not be
+" included in version control.
