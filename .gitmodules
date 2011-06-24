@@ -1,42 +1,42 @@
-[submodule ".vim/bundle/fugitive"]
-	path = .vim/bundle/fugitive
+[submodule "vim/bundle/fugitive"]
+	path = vim/bundle/fugitive
 	url = git://github.com/tpope/vim-fugitive.git
-[submodule ".vim/bundle/molokai"]
-	path = .vim/bundle/molokai
+[submodule "vim/bundle/molokai"]
+	path = vim/bundle/molokai
 	url = git://github.com/vim-scripts/molokai.git
-[submodule ".vim/bundle/ack"]
-	path = .vim/bundle/ack
-	url = git://github.com/mileszs/ack.vim.git
-[submodule ".vim/bundle/pep8"]
-	path = .vim/bundle/pep8
+[submodule "vim/bundle/ack"]
+	path = vim/bundle/ack
+	url = git://github.com/mileszs/ackvim.git
+[submodule "vim/bundle/pep8"]
+	path = vim/bundle/pep8
 	url = git://github.com/nvie/vim-pep8.git
-[submodule ".vim/bundle/pyflakes"]
-	path = .vim/bundle/pyflakes
+[submodule "vim/bundle/pyflakes"]
+	path = vim/bundle/pyflakes
 	url = git://github.com/nvie/vim-pyflakes.git
-[submodule ".vim/bundle/gundo"]
-	path = .vim/bundle/gundo
-	url = git://github.com/sjl/gundo.vim.git
-[submodule ".vim/bundle/abolish"]
-	path = .vim/bundle/abolish
+[submodule "vim/bundle/gundo"]
+	path = vim/bundle/gundo
+	url = git://github.com/sjl/gundovim.git
+[submodule "vim/bundle/abolish"]
+	path = vim/bundle/abolish
 	url = git://github.com/tpope/vim-abolish.git
-[submodule ".vim/bundle/yankring"]
-	path = .vim/bundle/yankring
-	url = git://github.com/vim-scripts/YankRing.vim.git
-[submodule ".vim/bundle/scratch"]
-	path = .vim/bundle/scratch
-	url = git://github.com/vim-scripts/scratch.vim.git
-[submodule ".vim/bundle/autocomplpop"]
-	path = .vim/bundle/autocomplpop
+[submodule "vim/bundle/yankring"]
+	path = vim/bundle/yankring
+	url = git://github.com/vim-scripts/YankRingvim.git
+[submodule "vim/bundle/scratch"]
+	path = vim/bundle/scratch
+	url = git://github.com/vim-scripts/scratchvim.git
+[submodule "vim/bundle/autocomplpop"]
+	path = vim/bundle/autocomplpop
 	url = git://github.com/vim-scripts/AutoComplPop.git
-[submodule ".vim/bundle/python"]
-	path = .vim/bundle/python
-	url = git://github.com/vim-scripts/indentpython.vim--nianyang.git
-[submodule ".vim/bundle/solarized"]
-	path = .vim/bundle/solarized
+[submodule "vim/bundle/python"]
+	path = vim/bundle/python
+	url = git://github.com/vim-scripts/indentpythonvim--nianyang.git
+[submodule "vim/bundle/solarized"]
+	path = vim/bundle/solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
-[submodule ".vim/bundle/tagbar"]
-	path = .vim/bundle/tagbar
+[submodule "vim/bundle/tagbar"]
+	path = vim/bundle/tagbar
 	url = git://github.com/majutsushi/tagbar.git
-[submodule ".vim/bundle/rails"]
-	path = .vim/bundle/rails
+[submodule "vim/bundle/rails"]
+	path = vim/bundle/rails
 	url = git://github.com/tpope/vim-rails.git
