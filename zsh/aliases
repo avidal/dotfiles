@@ -1,5 +1,7 @@
 # Aliases that I always want available
 
+alias ls='ls --color=auto'
+
 alias svim='sudo vim'
 alias stail='sudo tail'
 alias svs='sudo supervisorctl'
