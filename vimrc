@@ -2,15 +2,14 @@
 " This must be first, because it changes other options as a side effect
 set nocompatible
 
+" load debian paths when applicable
+runtime! debian.vim
+
 " Load the pathogen plugin system
 filetype off
 runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
-
 filetype plugin indent on
-
-" load debian paths when applicable
-runtime! debian.vim
 
 " enable omnicomplete
 set ofu=syntaxcomplete#Complete
