@@ -14,6 +14,7 @@ alias apt-file='sudo apt-file'
 # if hub is available, alias git to hub
 if [[ -e `which hub 2>/dev/null` ]]; then
     alias git=hub
+    compdef hub=git
 fi
 
 alias rmpyc='rm **/*.pyc'
