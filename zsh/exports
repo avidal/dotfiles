@@ -2,6 +2,10 @@ export TERM="xterm-256color"
 export DISPLAY=:0.0
 export EDITOR=vim
 
+# apparently setting EDITOR to vim causes zsh to switch to vim keybindings
+# use bindkey -e to reset it back to normal
+bindkey -e
+
 home_path=$HOME/bin
 local_path=/usr/local/bin:/usr/local/sbin
 export PATH=$home_path:$local_path:$PATH:/usr/lib/git-core

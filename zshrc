@@ -6,6 +6,7 @@ dotfiles=(
     completion
     aliases
     history
+    tmux
     python
     ruby
     wk
