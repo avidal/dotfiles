@@ -154,14 +154,10 @@ endfunction
 
 set background=dark " default to dark background
 
-"let g:solarized_termcolors=16
-
 if &t_Co >= 256 || has("gui_running")
     " color scheme for 256 colors
     colorscheme molokai
 endif
-
-"colorscheme solarized
 
 if &t_Co > 2 || has("gui_running")
     syntax on                       " enable syntax highlighting when the term
