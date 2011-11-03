@@ -40,3 +40,15 @@
 [submodule "vim/bundle/flake8"]
 	path = vim/bundle/flake8
 	url = git://github.com/avidal/flake8.vim.git
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
+	url = git://github.com/scrooloose/nerdtree.git
+[submodule "vim/bundle/bufkill"]
+	path = vim/bundle/bufkill
+	url = git://github.com/vim-scripts/bufkill.vim.git
+[submodule "vim/bundle/surround"]
+	path = vim/bundle/surround
+	url = git://github.com/tpope/vim-surround.git
+[submodule "vim/bundle/vividchalk"]
+	path = vim/bundle/vividchalk
+	url = git://github.com/tpope/vim-vividchalk.git
