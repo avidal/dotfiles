@@ -16,7 +16,6 @@ zsh/*.sw[po]
 
 # }}}
 
-
 # git {{{
 
 !gitconfig
@@ -29,7 +28,6 @@ zsh/*.sw[po]
 !.gitmodules
 
 # }}}
-
 
 # vim {{{
 
@@ -67,6 +65,13 @@ vim/.undo/*
 
 # }}}
 
+# tmux {{{
+
+!tmux.conf
+!teamocil/
+!teamocil/*
+
+# }}}
 
 # misc {{{
 
