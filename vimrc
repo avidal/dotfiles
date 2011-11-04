@@ -322,6 +322,8 @@ if has("autocmd")
         endfun
 
         autocmd BufNewFile,BufRead *.html,*.htm call s:DetectHTMLVariant()
+        autocmd filetype html setlocal ts=2 sts=2
+
         autocmd filetype html,htmldjango,xml set sw=2 ts=2 sts=2
 
         " Auto-closing of HTML/XML tags
