@@ -13,9 +13,14 @@
 #
 
 FOLDERS=(
+    ~/Projects
     ~/Projects/work
     ~/Projects/personal
     ~/Projects/scratch
+
+    ~/projects/work
+    ~/projects/personal
+    ~/projects/scratch
 )
 
 RCFILE=".wkrc"
