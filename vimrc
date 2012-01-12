@@ -5,10 +5,9 @@ set nocompatible
 " load debian paths when applicable
 runtime! debian.vim
 
-" Load the pathogen plugin system
 filetype off
-runtime bundle/pathogen/autoload/pathogen.vim
-call pathogen#infect()
+runtime vundle.vim
+
 filetype plugin indent on
 
 " enable omnicomplete

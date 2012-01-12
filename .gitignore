@@ -55,13 +55,10 @@ vim/.tmp/*
 vim/.undo/*
 !vim/.undo/.gitkeep
 
-# because gitignore doesn't work recursively, manually set non-ignore
-# for various depths of pathogen bundles
-!vim/bundle
-!vim/bundle/*
-!vim/bundle/*/*
-!vim/bundle/*/*/*
-!vim/bundle/*/*/*/*
+# Ignore all bundles
+vim/bundle
+# Except vundle
+!vim/bundle/vundle
 
 # }}}
 
