@@ -8,6 +8,8 @@
 	ui = auto
 [core]
     excludesfile = "~/.gitexcludes"
+[merge]
+	tool = fugitive
 [alias]
     br = branch -a
 	ci = commit
@@ -19,3 +21,7 @@
 	default = tracking
 [rerere]
     enabled = true
+[mergetool "vimdiff"]
+	cmd = vim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+[mergetool "fugitive"]
+    cmd = vim -f -c \"Gdiff\" \"$MERGED\"
