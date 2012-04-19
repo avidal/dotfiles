@@ -155,7 +155,7 @@ set background=dark " default to dark background
 
 if &t_Co >= 256 || has("gui_running")
     " color scheme for 256 colors
-    colorscheme molokai
+    colorscheme jellybeans
 endif
 
 if &t_Co > 2 || has("gui_running")
@@ -458,8 +458,8 @@ iab lllorem Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Etiam lacu
 
 " GVIM specifics {{{
 if has("gui_running")
-    "set guifont=Inconsolata:h14
-    colorscheme molokai
+    set guifont=Ubuntu\ Mono\ 12
+    colorscheme jellybeans
 
     " remove toolbar, left and right scrollbars
     set guioptions-=T
