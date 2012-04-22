@@ -88,8 +88,11 @@ set encoding=utf-8
 set lazyredraw                      " don't update display while running macros
 set laststatus=2                    " always show status line
 set cmdheight=2                     " 2-line status bar
-set colorcolumn=81                  " draw a column at col 81
 set textwidth=79
+
+if v:version >= 730
+    set colorcolumn=81              " draw a column at col 81
+endif
 
 " statusline from http://www.linux.com/archive/feature/120126
 " set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
