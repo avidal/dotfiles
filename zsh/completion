@@ -5,3 +5,5 @@ zstyle ':completion::complete:*' use-cache 1
 zstyle ':completion::complete:*' cache-path $ZSH/data/completion.cache
 
 compctl -g '~/.teamocil/*(:t:r)' teamocil
+
+source hub.zsh_completion
