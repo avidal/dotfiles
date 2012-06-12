@@ -1,3 +1,4 @@
+export GITHUB_USER="avidal"
 export TERM="xterm-256color"
 export DISPLAY=:0.0
 export EDITOR=vim
