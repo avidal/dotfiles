@@ -21,6 +21,8 @@ FOLDERS=(
     ~/projects/work
     ~/projects/personal
     ~/projects/scratch
+
+    ~/projects
 )
 
 RCFILE=".wkrc"

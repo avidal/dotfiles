@@ -11,6 +11,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'nvie/vim-flake8'
 Bundle 'nanotech/jellybeans.vim'
+Bundle 'scrooloose/syntastic'
 
 "Bundle 'YankRing.vim'
 Bundle 'scratch.vim'

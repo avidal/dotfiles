@@ -13,6 +13,15 @@ filetype plugin indent on
 " enable omnicomplete
 set ofu=syntaxcomplete#Complete
 
+" open the syntastic fix window automatically
+let g:syntastic_auto_loc_list=1
+
+" filter out a few unnecessary files from the nerd tree
+let NERDTreeIgnore=['\.pyc$', '\~$']
+
+" show hidden files in NERDTree
+let NERDTreeShowHidden=1
+
 " Change mapleader to ,
 let mapleader=","
 
@@ -378,9 +387,6 @@ if has("autocmd")
         autocmd filetype python imap <buffer> <F5> <Esc>:w<CR>:!python %<CR>
         autocmd filetype python map <buffer> <S-F5> :w<CR>:!ipython %<CR>
         autocmd filetype python imap <buffer> <S-F5> <Esc>:w<CR>:!ipython %<CR>
-
-        " Run a quick static syntax check every time we save a Python file
-        autocmd BufWritePost *.py call Flake8()
     augroup end " }}}
 
     augroup ruby_files "{{{
