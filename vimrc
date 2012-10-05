@@ -413,7 +413,7 @@ if has("autocmd")
     augroup javascript_files "{{{
         au!
 
-        autocmd filetype javascript setlocal expandtab
+        autocmd filetype javascript setlocal expandtab sw=2 ts=2 sts=2
         autocmd filetype javascript setlocal listchars=trail:·,extends:#,nbsp:·
         autocmd filetype javascript setlocal foldmethod=marker foldmarker={,}
     augroup end "}}}
