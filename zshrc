@@ -18,3 +18,7 @@ for file in $dotfiles; do
     file=$ZSH/$file
     [[ -f $file ]] && source $file
 done
+
+for file in $ZSH/plugins/*.zsh; do
+    source $file
+done

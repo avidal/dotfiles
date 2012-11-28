@@ -6,6 +6,7 @@
 !zshrc
 !zsh
 !zsh/*
+!zsh/plugins/*
 
 
 # sensitive settings
