@@ -75,5 +75,6 @@ vim/bundle
 
 !bin
 !bin/*
+!dircolors
 
 # }}}
