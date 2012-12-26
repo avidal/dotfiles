@@ -22,3 +22,6 @@ done
 for file in $ZSH/plugins/*.zsh; do
     source $file
 done
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
