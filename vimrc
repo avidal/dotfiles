@@ -25,6 +25,8 @@ let NERDTreeShowHidden=1
 " Change mapleader to ,
 let mapleader=","
 
+let g:Powerline_symbols="fancy"
+
 " Editing behavior {{{
 set showmode                        " always show the current editing mode
 set nowrap                          " do not wrap lines
@@ -164,10 +166,11 @@ endfunction
 " Highlighting {{{
 
 set background=dark " default to dark background
+colorscheme solarized
 
 if &t_Co >= 256 || has("gui_running")
     " color scheme for 256 colors
-    colorscheme jellybeans
+    colorscheme solarized
 endif
 
 if &t_Co > 2 || has("gui_running")
@@ -408,14 +411,16 @@ if has("autocmd")
         au!
 
         autocmd filetype css,less setlocal foldmethod=marker foldmarker={,}
+        autocmd filetype css,less setlocal ts=2 sts=2 sw=2
     augroup end "}}}
 
     augroup javascript_files "{{{
         au!
 
-        autocmd filetype javascript setlocal expandtab sw=2 ts=2 sts=2
-        autocmd filetype javascript setlocal listchars=trail:·,extends:#,nbsp:·
-        autocmd filetype javascript setlocal foldmethod=marker foldmarker={,}
+        autocmd filetype javascript,handlebars setlocal expandtab
+        autocmd filetype javascript,handlebars setlocal listchars=trail:·,extends:#,nbsp:·
+        autocmd filetype javascript,handlebars setlocal foldmethod=marker foldmarker={,}
+        autocmd filetype javascript,handlebars setlocal ts=2 sts=2 sw=2
     augroup end "}}}
 
     augroup textile_files "{{{
