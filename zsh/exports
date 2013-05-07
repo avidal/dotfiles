@@ -12,6 +12,8 @@ local_path=/usr/local/bin:/usr/local/sbin
 export PATH=$home_path:$local_path:$PATH:/usr/lib/git-core
 export NODE_PATH=$HOME/local/node:$HOME/local/node/lib/node_modules:$HOME/node_modules:$HOME/node_modules/less/lib
 
+export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+
 eval `dircolors ~/.dircolors`
 
 export GOPATH=$HOME/gosrc
