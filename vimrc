@@ -166,11 +166,11 @@ endfunction
 " Highlighting {{{
 
 set background=dark " default to dark background
-colorscheme solarized
+colorscheme jellybeans
 
 if &t_Co >= 256 || has("gui_running")
     " color scheme for 256 colors
-    colorscheme solarized
+    colorscheme jellybeans
 endif
 
 if &t_Co > 2 || has("gui_running")
