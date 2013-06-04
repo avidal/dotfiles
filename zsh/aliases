@@ -23,7 +23,6 @@ fi
 
 alias rmpyc='rm **/*.pyc'
 alias ports='sudo lsof -i -P -sTCP:LISTEN'
-alias ack='ack -a'
 
 alias gs='git st'
 alias gar='git add -A $(git root)'
