@@ -7,7 +7,7 @@ Bundle "altercation/vim-colors-solarized"
 Bundle "groenewege/vim-less"
 Bundle "nono/vim-handlebars"
 Bundle 'AutoComplPop'
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'Lokaltog/powerline'
 Bundle 'bufexplorer.zip'
 Bundle 'bufkill.vim'
 Bundle 'groenewege/vim-less'
@@ -23,3 +23,4 @@ Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
+Bundle 'kien/ctrlp.vim'

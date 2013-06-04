@@ -8,6 +8,8 @@ runtime! debian.vim
 filetype off
 runtime vundle.vim
 
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+
 filetype plugin indent on
 
 " enable omnicomplete
