@@ -1,27 +1,27 @@
 [user]
-	name = Alex Vidal
-	email = alex.vidal@gmail.com
+    name = Alex Vidal
+    email = alex.vidal@gmail.com
 [color]
     diff = auto
     status = auto
     branch = auto
-	ui = auto
+    ui = auto
 [core]
-    excludesfile = "~/.gitexcludes"
+    excludesfile = /Users/alexvidal/.gitexcludes
 [merge]
-	tool = fugitive
+    tool = fugitive
 [alias]
     br = branch -a
-	ci = commit
-	st = status -s --ignore-submodules
-	co = checkout
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    ci = commit
+    st = status -s --ignore-submodules
+    co = checkout
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     root = !pwd
 [push]
-	default = tracking
+    default = tracking
 [rerere]
     enabled = true
 [mergetool "vimdiff"]
-	cmd = vim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+    cmd = vim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
 [mergetool "fugitive"]
     cmd = vim -f -c \"Gdiff\" \"$MERGED\"
