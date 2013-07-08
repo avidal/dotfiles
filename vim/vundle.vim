@@ -2,7 +2,9 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
-"Bundle "davidhalter/jedi-vim"
+" My personal vim bundle
+Bundle "avidal/vim-bundle"
+
 Bundle "altercation/vim-colors-solarized"
 Bundle "groenewege/vim-less"
 Bundle "nono/vim-handlebars"

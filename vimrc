@@ -286,9 +286,6 @@ nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
 " quick ack!
 nnoremap <leader>a :Ack<Space>
 
-" create folds for html tags
-"nnoremap <leader>ft Vatzf
-
 " Reselect just-pasted text
 nnoremap <leader>v V`]
 
@@ -296,164 +293,18 @@ nnoremap <leader>v V`]
 nnoremap <F5> :GundoToggle<CR>
 " }}}
 
-" Filetype specific stuff {{{
-" only want to support this if we have autocommands
-if has("autocmd")
-    augroup invisible_chars "{{{
-        au!
+augroup invisible_chars "{{{
+    au!
 
-        " Show invisible characters in all of these files
-        autocmd filetype vim setlocal list
-        autocmd filetype python,rst setlocal list
-        autocmd filetype ruby setlocal list
-        autocmd filetype javascript,css setlocal list
-    augroup end "}}}
-
-    augroup vim_files "{{{
-        au!
-
-        " Bind <F1> to show the keyword under cursor
-        " general help can still be entered manually, with :h
-        autocmd filetype vim noremap <buffer> <F1> <Esc>:help <C-r><C-w><CR>
-        autocmd filetype vim noremap! <buffer> <F1> <Esc>:help <C-r><C-w><CR>
-    augroup end "}}}
-
-    augroup html_files "{{{
-        au!
-
-        " This function detects, based on HTML content, whether this is a
-        " Django template, or a plain HTML file, and sets filetype accordingly
-        fun! s:DetectHTMLVariant()
-            let n = 1
-            while n < 50 && n < line("$")
-                " check for django
-                if getline(n) =~ '{%\s*\(extends\|load\|block\|if\|for\|include\|trans\)\>'
-                    set ft=htmldjango.html
-                    return
-                endif
-                let n = n + 1
-            endwhile
-            " go with html
-            set ft=html
-        endfun
-
-        autocmd BufNewFile,BufRead *.html,*.htm call s:DetectHTMLVariant()
-        autocmd filetype html setlocal ts=2 sts=2
-
-        autocmd filetype html,htmldjango,xml set sw=2 ts=2 sts=2
-
-        " Auto-closing of HTML/XML tags
-        " let g:closetag_default_xml=1
-        " autocmd filetype html,htmldjango let b:closetag_html_style=1
-        " autocmd filetype html,xhtml,xml source ~/.vim/scripts/closetag.vim
-
-        " Enable Sparkup for lightning-fast HTML editing
-        let g:sparkupExecuteMapping = '<leader>e'
-    augroup end " }}}
-
-    augroup python_files "{{{
-        au!
-
-        " This function detects, based on Python content, whether this is a
-        " Django file, which may enabling snippet completion for it
-        fun! s:DetectPythonVariant()
-            let n = 1
-            while n < 50 && n < line("$")
-                " check for django
-                " search for: import django, from django import, from
-                " django.<etc> import
-                if getline(n) =~ '^\(import\|from\)\s\+\<django\>'
-                    set ft=python.django
-                    "set syntax=python
-                    return
-                endif
-                let n = n + 1
-            endwhile
-            " go with python
-            set ft=python
-        endfun
-        autocmd BufNewFile,BufRead *.py call s:DetectPythonVariant()
-
-        " PEP8 compliance (set 1 tab = 4 chars explicitly, even if set
-        " earlier, as it is important)
-        autocmd filetype python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
-        autocmd filetype python setlocal textwidth=80
-        autocmd filetype python match ErrorMsg '\%>80v.\+'
-
-        " But disable autowrapping as it is super annoying
-        autocmd filetype python setlocal formatoptions-=t
-
-        " Folding for Python (uses syntax/python.vim for fold definitions)
-        "autocmd filetype python,rst setlocal nofoldenable
-        "autocmd filetype python setlocal foldmethod=expr
-
-        " Python runners
-        autocmd filetype python map <buffer> <F5> :w<CR>:!python %<CR>
-        autocmd filetype python imap <buffer> <F5> <Esc>:w<CR>:!python %<CR>
-        autocmd filetype python map <buffer> <S-F5> :w<CR>:!ipython %<CR>
-        autocmd filetype python imap <buffer> <S-F5> <Esc>:w<CR>:!ipython %<CR>
-    augroup end " }}}
-
-    augroup ruby_files "{{{
-        au!
-
-        autocmd filetype ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
-    augroup end " }}}
-
-    augroup rst_files "{{{
-        au!
-
-        " Auto-wrap text around 74 chars
-        autocmd filetype rst setlocal textwidth=74
-        autocmd filetype rst setlocal formatoptions+=nqt
-        autocmd filetype rst match ErrorMsg '\%>74v.\+'
-    augroup end " }}}
-
-    augroup css_files "{{{
-        au!
-
-        autocmd filetype css,less setlocal foldmethod=marker foldmarker={,}
-        autocmd filetype css,less setlocal ts=2 sts=2 sw=2
-    augroup end "}}}
-
-    augroup javascript_files "{{{
-        au!
-
-        autocmd filetype javascript,handlebars setlocal expandtab
-        autocmd filetype javascript,handlebars setlocal listchars=trail:·,extends:#,nbsp:·
-        autocmd filetype javascript,handlebars setlocal foldmethod=marker foldmarker={,}
-        autocmd filetype javascript,handlebars setlocal ts=2 sts=2 sw=2
-    augroup end "}}}
-
-    augroup textile_files "{{{
-        au!
-
-        autocmd filetype textile set tw=78 wrap
-
-        " Render YAML front matter inside Textile documents as comments
-        autocmd filetype textile syntax region frontmatter start=/\%^---$/ end=/^---$/
-        autocmd filetype textile highlight link frontmatter Comment
-    augroup end "}}}
-
-    augroup markdown_files "{{{
-        au!
-
-        " i've never used modula2, and i like .md for markdown!
-        au BufNewFile,BufRead *.md set ft=markdown
-    augroup end "}}}
-endif
-
-" anything under .zsh should be marked as a zsh file
-autocmd BufNewFile,BufRead ~/.zsh* setlocal filetype=zsh
-autocmd BufNewFile,BufRead ~/dotfiles/zsh* setlocal filetype=zsh
-
-" }}}
+    " Show invisible characters in all of these files
+    autocmd filetype vim setlocal list
+    autocmd filetype python,rst setlocal list
+    autocmd filetype ruby setlocal list
+    autocmd filetype javascript,css setlocal list
+augroup end "}}}
 
 " restore cursor position when reopening files
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-
-" common misspellings
-runtime autocorrect.vim
 
 " extra vi compatibility {{{
 set cpoptions+=$        " when changing a line, don't redisplay it, but put a $ at
@@ -462,15 +313,6 @@ set formatoptions-=o    " don't start new lines with a comment leader when
                         " pressing o
 au filetype vim set formatoptions-=o
 " }}}
-
-" Extra user or machine-specific settings {{{
-runtime local.vim " should probably be a symlink to a machine-specific config
-" }}}
-
-" insert-mode abbreviations for lorem ipsum
-iab lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit
-iab llorem Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Etiam lacus ligula, accumsan id imperdiet rhoncus, dapibus vitae arcu.  Nulla non quam erat, luctus consequat nisi
-iab lllorem Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Etiam lacus ligula, accumsan id imperdiet rhoncus, dapibus vitae arcu.  Nulla non quam erat, luctus consequat nisi.  Integer hendrerit lacus sagittis erat fermentum tincidunt.  Cras vel dui neque.  In sagittis commodo luctus.  Mauris non metus dolor, ut suscipit dui.  Aliquam mauris lacus, laoreet et consequat quis, bibendum id ipsum.  Donec gravida, diam id imperdiet cursus, nunc nisl bibendum sapien, eget tempor neque elit in tortor
 
 " GVIM specifics {{{
 if has("gui_running")
