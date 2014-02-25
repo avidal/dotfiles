@@ -36,8 +36,10 @@ Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'kien/ctrlp.vim'
-Bundle 'Lokaltog/powerline', { 'rtp': 'powerline/bindings/vim' }
-
+Bundle 'bling/vim-airline'
+Bundle 'Blackrush/vim-gocode'
+Bundle 'LokiChaos/vim-tintin'
+Bundle 'wting/rust.vim'
 
 filetype plugin indent on
 
