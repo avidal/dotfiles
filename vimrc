@@ -285,6 +285,9 @@ nmap <silent> <leader>n :nohlsearch<CR>
 " use ,s to enable/disable showing invisible chars
 nmap <silent> <leader>s :set list!<CR>
 
+" use ,e to open buf explorer
+nmap <silent> <leader>e :BufExplorer<CR>
+
 " jj/jk for getting out of insert mode
 inoremap jj <Esc>
 inoremap jk <Esc>
