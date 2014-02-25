@@ -1,6 +1,8 @@
 # Aliases that I always want available
 
 alias ls='ls --color=auto'
+alias la='ls -al'
+alias ll='ls -l'
 
 alias svim='sudo vim'
 alias stail='sudo tail'
