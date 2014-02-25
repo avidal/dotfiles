@@ -12,8 +12,11 @@ local_path=/usr/local/bin:/usr/local/sbin
 export PATH=$home_path:$local_path:$PATH:/usr/lib/git-core
 export NODE_PATH=$HOME/local/node:$HOME/local/node/lib/node_modules:$HOME/node_modules:$HOME/node_modules/less/lib
 
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+export GOPATH=$HOME/go
 
+export PATH=$GOPATH/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH
+
+# dircolors isn't on the $PATH on the mbp until we add the brew gnubin path
+# above
 eval `dircolors ~/.dircolors`
 
-export GOPATH=$HOME/gosrc
