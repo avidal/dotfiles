@@ -23,6 +23,8 @@ FOLDERS=(
     ~/projects/scratch
 
     ~/projects
+
+    ~/go/src/github.com/avidal
 )
 
 RCFILE=".wkrc"
