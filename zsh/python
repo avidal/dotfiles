@@ -25,3 +25,4 @@ export PIP_RESPECT_VIRTUALENV=true
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export PIP_LOG_FILE='/tmp/pip-log.txt'
 export PIP_DOWNLOAD_CACHE='/tmp/pip-cache'
+export PYTHONDONTWRITEBYTECODE=1
