@@ -33,3 +33,6 @@ alias gd='git diff'
 alias gl='git lg'
 alias g='git'
 alias gti='git'
+
+alias bower='noglob bower'
+alias npm='noglob npm'
