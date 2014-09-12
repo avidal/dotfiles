@@ -22,7 +22,6 @@ Bundle "nono/vim-handlebars"
 Bundle 'AutoComplPop'
 Bundle 'bufexplorer.zip'
 Bundle 'bufkill.vim'
-Bundle 'groenewege/vim-less'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'indentpython.vim--nianyang'
 Bundle 'mileszs/ack.vim'
@@ -40,6 +39,11 @@ Bundle 'bling/vim-airline'
 Bundle 'Blackrush/vim-gocode'
 Bundle 'LokiChaos/vim-tintin'
 Bundle 'wting/rust.vim'
+Bundle "guns/vim-clojure-static"
+Bundle "guns/vim-clojure-highlight"
+Bundle "tpope/vim-fireplace"
+Bundle "kien/rainbow_parentheses.vim"
+Bundle "mxw/vim-jsx"
 
 filetype plugin indent on
 
@@ -48,6 +52,8 @@ set ofu=syntaxcomplete#Complete
 
 " open the syntastic fix window automatically
 let g:syntastic_auto_loc_list=1
+
+let g:syntastic_javascript_checkers = ['jsxhint']
 
 " filter out a few unnecessary files from the nerd tree
 let NERDTreeIgnore=['\.pyc$', '\~$']
@@ -347,6 +353,27 @@ set formatoptions-=o    " don't start new lines with a comment leader when
                         " pressing o
 au filetype vim set formatoptions-=o
 " }}}
+
+" rainbow parens don't work well on my dark background
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+\ ]
+
+au VimEnter * RainbowParenthesesToggle
 
 " GVIM specifics {{{
 if has("gui_running")
