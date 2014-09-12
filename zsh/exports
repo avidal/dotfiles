@@ -16,7 +16,8 @@ export GOPATH=$HOME/go
 
 export PATH=$GOPATH/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH
 
+export DOCKER_HOST="tcp://10.1.2.4:4243"
+
 # dircolors isn't on the $PATH on the mbp until we add the brew gnubin path
 # above
 eval `dircolors ~/.dircolors`
-
