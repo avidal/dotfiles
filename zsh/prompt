@@ -25,8 +25,8 @@ done
 #   CWD: location/cwd color
 #   HOST: hostname display
 # Defaults:
-USER=$C[green]
-CWD=$C[blue]
+# USER=$C[green]
+# CWD=$C[blue]
 
 # Manually cut hostname; hostname -s bails out on some systems.
 HOST=`hostname | cut -d '.' -f 1`
@@ -42,10 +42,10 @@ case $DOMAIN in
 esac
 
 # Themed by host/node name (takes precedence over domain)
-case $HOST in
-    # Workstations
-    alex-debian ) USER=$C[red] CWD=$C[green] ;;
-esac
+# case $HOST in
+#     # Workstations
+#     alex-debian ) USER=$C[red] CWD=$C[green] ;;
+# esac
 
 
 function shortpath() {
