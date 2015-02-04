@@ -7,17 +7,20 @@ export EDITOR=vim
 # use bindkey -e to reset it back to normal
 bindkey -e
 
-home_path=$HOME/bin
+home_path=$HOME/.local/bin:$HOME/bin
 local_path=/usr/local/bin:/usr/local/sbin
 export PATH=$home_path:$local_path:$PATH:/usr/lib/git-core
-export NODE_PATH=$HOME/local/node:$HOME/local/node/lib/node_modules:$HOME/node_modules:$HOME/node_modules/less/lib
 
 export GOPATH=$HOME/go
 
 export PATH=$GOPATH/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH
 
-export DOCKER_HOST="tcp://10.1.2.4:4243"
+source ~/.nvm/nvm.sh
 
 # dircolors isn't on the $PATH on the mbp until we add the brew gnubin path
 # above
 eval `dircolors ~/.dircolors`
+
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=/Users/alex/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
