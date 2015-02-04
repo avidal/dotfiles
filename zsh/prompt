@@ -178,7 +178,7 @@ function prompt_new {
     setopt prompt_subst
 
     PROMPT='
-%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%} in %{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info)
+%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%} in %{$fg_bold[green]%}%~%{$reset_color%}$(git_prompt_info)
 $(virtualenv_info)$(repo_char) '
 
     RPROMPT='$(date "+%x %T %Z")'

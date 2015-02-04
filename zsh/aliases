@@ -40,3 +40,7 @@ alias npm='noglob npm'
 function gc() {
     git clone $1 ~/Code/github.com/$1
 }
+
+djed=~/Code/github.com/djedstudios
+code=~/Code/github.com/avidal
+: ~djed ~code
