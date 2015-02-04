@@ -11,31 +11,18 @@
 #
 # Also deactivates any currently active virtualenv, just for neatness' sake.
 #
-
-FOLDERS=(
-    ~/Projects
-    ~/Projects/work
-    ~/Projects/personal
-    ~/Projects/scratch
-
-    ~/projects/work
-    ~/projects/personal
-    ~/projects/scratch
-
-    ~/projects
-
-    ~/go/src/github.com/avidal
-)
-
+CODE=$HOME/Code
 RCFILE=".wkrc"
 
 function wk() {
     # deactivate/workon will fail silently if project is not a virtualenv.
     deactivate 2>/dev/null
     workon $1 2>/dev/null
-    # Ditto for my custom "workon" for RVM
-    activate_gemset $1
+
     # Try to find the given folder and cd to it.
+    # It should be in $CODE/$1, or $CODE/github.com/$1, or
+    # $CODE/bitbucket.org/$1
+    FOLDERS=($CODE $CODE/github.com $CODE/bitbucket.org)
     for folder in $FOLDERS; do
         target=$folder/$1
         if [[ -d $target ]]; then
@@ -52,7 +39,9 @@ function wk() {
 
 # Completion
 function _wk() {
-    compadd $(find $FOLDERS -mindepth 1 -maxdepth 1 -type d -exec basename {} \; 2>/dev/null)
+    compadd $(find $CODE -type d -mindepth 1 -maxdepth 3 | \
+                ag --nocolor -v '(github.com|bitbucket.org)(/[^\/]+)?$' | \
+                sed -E "s:^$CODE/((github.com|bitbucket.org)/)?::" 2>/dev/null)
 }
 
 compdef _wk wk
