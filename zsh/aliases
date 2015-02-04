@@ -36,3 +36,7 @@ alias gti='git'
 
 alias bower='noglob bower'
 alias npm='noglob npm'
+
+function gc() {
+    git clone $1 ~/Code/github.com/$1
+}
