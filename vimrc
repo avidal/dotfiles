@@ -30,6 +30,7 @@ Plugin 'bling/vim-airline'
 Plugin 'Blackrush/vim-gocode'
 Plugin 'LokiChaos/vim-tintin'
 Plugin 'wting/rust.vim'
+Plugin 'editorconfig/editorconfig-vim'
 
 call vundle#end()
 
