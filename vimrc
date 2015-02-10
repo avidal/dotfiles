@@ -7,43 +7,31 @@ runtime! debian.vim
 
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " Let vundle manage itself
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
-" My personal vim bundle
-Bundle "avidal/vim-bundle"
+" My custom vim bundle
+Plugin 'avidal/vim-bundle'
 
-Bundle "altercation/vim-colors-solarized"
-Bundle "groenewege/vim-less"
-Bundle "nono/vim-handlebars"
-Bundle 'AutoComplPop'
-Bundle 'bufexplorer.zip'
-Bundle 'bufkill.vim'
-Bundle 'hail2u/vim-css3-syntax'
-Bundle 'indentpython.vim--nianyang'
-Bundle 'mileszs/ack.vim'
-Bundle 'nanotech/jellybeans.vim'
-Bundle 'pangloss/vim-javascript'
-Bundle 'scratch.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'sjl/gundo.vim'
-Bundle 'tpope/vim-abolish'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'kien/ctrlp.vim'
-Bundle 'bling/vim-airline'
-Bundle 'Blackrush/vim-gocode'
-Bundle 'LokiChaos/vim-tintin'
-Bundle 'wting/rust.vim'
-Bundle "guns/vim-clojure-static"
-Bundle "guns/vim-clojure-highlight"
-Bundle "tpope/vim-fireplace"
-Bundle "kien/rainbow_parentheses.vim"
-Bundle "mxw/vim-jsx"
+Plugin 'AutoComplPop'
+Plugin 'bufexplorer.zip'
+Plugin 'bufkill.vim'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'mileszs/ack.vim'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-surround'
+Plugin 'kien/ctrlp.vim'
+Plugin 'bling/vim-airline'
+Plugin 'Blackrush/vim-gocode'
+Plugin 'LokiChaos/vim-tintin'
+Plugin 'wting/rust.vim'
+
+call vundle#end()
 
 filetype plugin indent on
 
@@ -53,7 +41,8 @@ set ofu=syntaxcomplete#Complete
 " open the syntastic fix window automatically
 let g:syntastic_auto_loc_list=1
 
-let g:syntastic_javascript_checkers = ['jsxhint']
+" use jshint and eslint for javascript
+let g:syntastic_javascript_checkers = ['jshint', 'eslint']
 
 " filter out a few unnecessary files from the nerd tree
 let NERDTreeIgnore=['\.pyc$', '\~$']
@@ -372,8 +361,6 @@ let g:rbpt_colorpairs = [
     \ ['darkred',     'DarkOrchid3'],
     \ ['red',         'firebrick3'],
 \ ]
-
-au VimEnter * RainbowParenthesesToggle
 
 " GVIM specifics {{{
 if has("gui_running")
