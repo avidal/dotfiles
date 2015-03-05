@@ -11,7 +11,7 @@
 #
 # Also deactivates any currently active virtualenv, just for neatness' sake.
 #
-CODE=$HOME/Code
+CODE=$HOME/Code/src
 RCFILE=".wkrc"
 
 function wk() {

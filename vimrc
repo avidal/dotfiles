@@ -31,6 +31,8 @@ Plugin 'Blackrush/vim-gocode'
 Plugin 'LokiChaos/vim-tintin'
 Plugin 'wting/rust.vim'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'ervandew/supertab'
+Plugin 'hynek/vim-python-pep8-indent'
 
 call vundle#end()
 
@@ -43,7 +45,7 @@ set ofu=syntaxcomplete#Complete
 let g:syntastic_auto_loc_list=1
 
 " use jshint and eslint for javascript
-let g:syntastic_javascript_checkers = ['jshint', 'eslint']
+let g:syntastic_javascript_checkers = ['jshint']
 
 " filter out a few unnecessary files from the nerd tree
 let NERDTreeIgnore=['\.pyc$', '\~$']
