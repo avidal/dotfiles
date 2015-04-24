@@ -38,9 +38,9 @@ alias bower='noglob bower'
 alias npm='noglob npm'
 
 function gc() {
-    git clone $1 ~/Code/github.com/$1
+    git clone $1 ~/Code/src/github.com/$1
 }
 
-djed=~/Code/github.com/djedstudios
-code=~/Code/github.com/avidal
+djed=~/Code/src/github.com/djedstudios
+code=~/Code/src/github.com/avidal
 : ~djed ~code

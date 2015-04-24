@@ -11,7 +11,7 @@ home_path=$HOME/.local/bin:$HOME/bin
 local_path=/usr/local/bin:/usr/local/sbin
 export PATH=$home_path:$local_path:$PATH:/usr/lib/git-core
 
-export GOPATH=$HOME/go
+export GOPATH=$HOME/Code
 
 export PATH=$GOPATH/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH
 
@@ -21,6 +21,6 @@ source ~/.nvm/nvm.sh
 # above
 eval `dircolors ~/.dircolors`
 
-export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_HOST=tcp://192.168.59.105:2376
 export DOCKER_CERT_PATH=/Users/alex/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
