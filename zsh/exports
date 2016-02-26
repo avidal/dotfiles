@@ -7,15 +7,14 @@ export EDITOR=vim
 # use bindkey -e to reset it back to normal
 bindkey -e
 
+go_bin=$HOME/Code/src/github.com/golang/go/bin
 home_path=$HOME/.local/bin:$HOME/bin
 local_path=/usr/local/bin:/usr/local/sbin
-export PATH=$home_path:$local_path:$PATH:/usr/lib/git-core
+export PATH=$go_bin:$home_path:$local_path:$PATH:/usr/lib/git-core
 
 export GOPATH=$HOME/Code
 
 export PATH=$GOPATH/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH
-
-source ~/.nvm/nvm.sh
 
 # dircolors isn't on the $PATH on the mbp until we add the brew gnubin path
 # above
