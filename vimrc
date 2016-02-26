@@ -11,7 +11,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Let vundle manage itself
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 " My custom vim bundle
 Plugin 'avidal/vim-bundle'
@@ -25,7 +25,7 @@ Plugin 'nanotech/jellybeans.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'bling/vim-airline'
 Plugin 'Blackrush/vim-gocode'
 Plugin 'LokiChaos/vim-tintin'
@@ -33,6 +33,8 @@ Plugin 'wting/rust.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'ervandew/supertab'
 Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'davidhalter/jedi-vim'
 
 call vundle#end()
 
@@ -277,8 +279,8 @@ nmap <leader>r :YRShow<CR>
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
-" use ,n to clear search highlighting
-nmap <silent> <leader>n :nohlsearch<CR>
+" use ,h to clear search highlighting
+nmap <silent> <leader>h :nohlsearch<CR>
 
 " use ,s to enable/disable showing invisible chars
 nmap <silent> <leader>s :set list!<CR>
