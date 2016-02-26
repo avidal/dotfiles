@@ -17,6 +17,9 @@ alias pacman='sudo pacman'
 alias aura='sudo aura'
 alias pac='pacman'
 
+autoload -U zmv
+alias mmv='noglob zmv -W'
+
 # if hub is available, alias git to hub
 if [[ -e `which hub 2>/dev/null` ]]; then
     alias git=hub
@@ -41,6 +44,10 @@ function gc() {
     git clone $1 ~/Code/src/github.com/$1
 }
 
-djed=~/Code/src/github.com/djedstudios
+function bc() {
+    git clone git@bitbucket.org:$1 ~/Code/src/bitbucket.org/$1
+}
+
+hipchat=~/Code/src/bitbucket.org/hipchat
 code=~/Code/src/github.com/avidal
-: ~djed ~code
+: ~hipchat ~code
