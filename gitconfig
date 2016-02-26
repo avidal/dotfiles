@@ -8,6 +8,7 @@
     ui = auto
 [core]
     excludesfile = ~/.gitexcludes
+    pager = diff-highlight | diff-so-fancy | less --tabs=1,5 -R
 [merge]
     tool = fugitive
 [alias]
@@ -20,6 +21,7 @@
     rebar = !git rebase -i $(git merge-base develop HEAD)
     yolo = !cowsay -f bong yolo && git push --force
     lolol = "!sh -c \"echo \\\"\\x1b[31;1mCHOO CHOO MOTHERFUCKER! ALL ABOARD THE YOLO EXPRESS\\x1b[0m\\\";read&&sl&&git push --force&&cowsay -f bong yolo\""
+    locals = !git branch -vv | grep \": gone]\" | awk '{ print $1 }'
 [push]
     default = tracking
 [rerere]
