@@ -8,18 +8,25 @@ export EDITOR=vim
 bindkey -e
 
 go_bin=$HOME/Code/src/github.com/golang/go/bin
+rust_bin=$HOME/.cargo/bin
 home_path=$HOME/.local/bin:$HOME/bin
 local_path=/usr/local/bin:/usr/local/sbin
-export PATH=$go_bin:$home_path:$local_path:$PATH:/usr/lib/git-core
+export PATH=$go_bin:$rust_bin:$home_path:$local_path:$PATH:/usr/lib/git-core
 
+export PGPATH=/Applications/Postgres.app/Contents/Versions/latest/bin
 export GOPATH=$HOME/Code
+export RUST_SRC_PATH=$HOME/Code/src/github.com/rust-lang/rust/src
 
-export PATH=$GOPATH/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH
+export PATH=$PGPATH:$GOPATH/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH
 
 # dircolors isn't on the $PATH on the mbp until we add the brew gnubin path
 # above
 eval `dircolors ~/.dircolors`
 
-export DOCKER_HOST=tcp://192.168.59.105:2376
-export DOCKER_CERT_PATH=/Users/alex/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
+export HIPCHAT_SRC=$HOME/Code/src/bitbucket.org/hipchat
+export hipchat_alert_email='avidal+devvm-alerts@atlassian.com.test-google-a.com'
+export hipchat_node='devvm'
+export hipchat_use_nfs=1
+export UPDATEFQDN='devvm.hipchat.com'
+export AWS_ENV='DEV'
+export hipchat_chef_provisioner='chef_solo'

@@ -34,7 +34,7 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'ervandew/supertab'
 Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'elixir-lang/vim-elixir'
-Plugin 'davidhalter/jedi-vim'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 
@@ -42,6 +42,8 @@ filetype plugin indent on
 
 " enable omnicomplete
 set ofu=syntaxcomplete#Complete
+
+let g:ycm_rust_src_path = '~/Code/src/github.com/rust-lang/rust/src'
 
 " open the syntastic fix window automatically
 let g:syntastic_auto_loc_list=1
