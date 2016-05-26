@@ -40,6 +40,8 @@ alias gti='git'
 alias bower='noglob bower'
 alias npm='noglob npm'
 
+# everything is in my GOPATH so let's get some aliases to clone git
+# repositories
 function gc() {
     git clone $1 ~/Code/src/github.com/$1
 }
@@ -48,6 +50,7 @@ function bc() {
     git clone git@bitbucket.org:$1 ~/Code/src/bitbucket.org/$1
 }
 
-hipchat=~/Code/src/bitbucket.org/hipchat
-code=~/Code/src/github.com/avidal
-: ~hipchat ~code
+# some directory aliases so i can cd ~work
+work=~/Code/src/bitbucket.org/hipchat
+personal=~/Code/src/github.com/avidal
+: ~work ~personal
