@@ -7,26 +7,22 @@ export EDITOR=vim
 # use bindkey -e to reset it back to normal
 bindkey -e
 
-go_bin=$HOME/Code/src/github.com/golang/go/bin
+# setup my path, preferring local cargo, then home, then system local
 rust_bin=$HOME/.cargo/bin
 home_path=$HOME/.local/bin:$HOME/bin
 local_path=/usr/local/bin:/usr/local/sbin
-export PATH=$go_bin:$rust_bin:$home_path:$local_path:$PATH:/usr/lib/git-core
+
+export PATH=$rust_bin:$home_path:$local_path:$PATH:/usr/lib/git-core
 
 export PGPATH=/Applications/Postgres.app/Contents/Versions/latest/bin
 export GOPATH=$HOME/Code
-export RUST_SRC_PATH=$HOME/Code/src/github.com/rust-lang/rust/src
 
+# update path again, this time pushing up the GOPATH
 export PATH=$PGPATH:$GOPATH/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH
+
+# rust-racer needs a source distribution of rust
+export RUST_SRC_PATH=$HOME/Code/src/github.com/rust-lang/rust/src
 
 # dircolors isn't on the $PATH on the mbp until we add the brew gnubin path
 # above
 eval `dircolors ~/.dircolors`
-
-export HIPCHAT_SRC=$HOME/Code/src/bitbucket.org/hipchat
-export hipchat_alert_email='avidal+devvm-alerts@atlassian.com.test-google-a.com'
-export hipchat_node='devvm'
-export hipchat_use_nfs=1
-export UPDATEFQDN='devvm.hipchat.com'
-export AWS_ENV='DEV'
-export hipchat_chef_provisioner='chef_solo'
