@@ -1,4 +1,12 @@
+# misc backup files
 *.sw[po]
+*.bak
+*.tmp
+*~
+
+# compiled files
 *.py[co]
+
+# os cruft
 .DS_Store
 Thumbs.db
