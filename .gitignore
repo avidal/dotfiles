@@ -6,6 +6,8 @@
 !zshrc
 !zsh
 !zsh/*
+!zsh/data/.gitkeep
+!zsh/completion/.gitkeep
 !zsh/plugins/*
 
 
@@ -75,7 +77,6 @@ vim/bundle
 
 !bin
 !bin/*
-bin/hc
 
 !dircolors
 
