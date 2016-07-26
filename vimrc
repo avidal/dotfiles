@@ -16,18 +16,16 @@ Plugin 'VundleVim/Vundle.vim'
 " My custom vim bundle
 Plugin 'avidal/vim-bundle'
 
-Plugin 'AutoComplPop'
-Plugin 'bufexplorer.zip'
-Plugin 'bufkill.vim'
+Plugin 'qpkorr/vim-bufkill'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'mileszs/ack.vim'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
-Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'wincent/command-t'
 Plugin 'bling/vim-airline'
-Plugin 'Blackrush/vim-gocode'
+Plugin 'fatih/vim-go'
 Plugin 'LokiChaos/vim-tintin'
 Plugin 'wting/rust.vim'
 Plugin 'editorconfig/editorconfig-vim'
@@ -51,11 +49,16 @@ let g:syntastic_auto_loc_list=1
 " use jshint and eslint for javascript
 let g:syntastic_javascript_checkers = ['jshint']
 
+let g:go_list_type = "quickfix"
+let g:go_fmt_command = "goimports"
+
 " filter out a few unnecessary files from the nerd tree
 let NERDTreeIgnore=['\.pyc$', '\~$']
 
 " show hidden files in NERDTree
 let NERDTreeShowHidden=1
+
+let g:CommandTWildIgnore=&wildignore . ",*/vendor,*/swagger,*/target"
 
 " Change mapleader to ,
 let mapleader=","
@@ -226,6 +229,8 @@ nnoremap ; :
 " map <F1> to <Esc>
 map! <F1> <Esc>
 
+map gd <Esc>:YcmCompleter GoTo
+
 " close the current window, fast!
 nnoremap <leader>q :q<CR>
 
@@ -278,8 +283,9 @@ let g:yankring_history_dir = '$HOME/.vim/.tmp'
 nmap <leader>r :YRShow<CR>
 
 " edit/source vimrc with ,ev and ,sv
-nmap <silent> <leader>ev :e $MYVIMRC<CR>
-nmap <silent> <leader>sv :so $MYVIMRC<CR>
+" Disabled for now because it makes ,e take too long
+" nmap <silent> <leader>ev :e $MYVIMRC<CR>
+" nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " use ,h to clear search highlighting
 nmap <silent> <leader>h :nohlsearch<CR>
@@ -287,8 +293,8 @@ nmap <silent> <leader>h :nohlsearch<CR>
 " use ,s to enable/disable showing invisible chars
 nmap <silent> <leader>s :set list!<CR>
 
-" use ,e to open buf explorer
-nmap <silent> <leader>e :BufExplorer<CR>
+" use ,e to open buffers in MRU
+nmap <silent> <leader>e :CommandTMRU<CR>
 
 " jj/jk for getting out of insert mode
 inoremap jj <Esc>
@@ -349,6 +355,8 @@ set formatoptions-=o    " don't start new lines with a comment leader when
                         " pressing o
 au filetype vim set formatoptions-=o
 " }}}
+
+au filetype go setlocal noet ts=4 sts=4 list
 
 " rainbow parens don't work well on my dark background
 let g:rbpt_colorpairs = [

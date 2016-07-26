@@ -40,6 +40,8 @@ alias gti='git'
 alias bower='noglob bower'
 alias npm='noglob npm'
 
+alias dcos='$HOME/.dcos/dcos/bin/dcos'
+
 # everything is in my GOPATH so let's get some aliases to clone git
 # repositories
 function gc() {
