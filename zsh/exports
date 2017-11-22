@@ -1,7 +1,7 @@
 export GITHUB_USER="avidal"
 export TERM="screen-256color"
 export DISPLAY=:0.0
-export EDITOR=vim
+export EDITOR=nvim
 
 # apparently setting EDITOR to vim causes zsh to switch to vim keybindings
 # use bindkey -e to reset it back to normal
@@ -21,7 +21,7 @@ export GOPATH=$HOME/Code
 export PATH=$PGPATH:$GOPATH/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH
 
 # rust-racer needs a source distribution of rust
-export RUST_SRC_PATH=$HOME/Code/src/github.com/rust-lang/rust/src
+export RUST_SRC_PATH=~/.multirust/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src
 
 # dircolors isn't on the $PATH on the mbp until we add the brew gnubin path
 # above

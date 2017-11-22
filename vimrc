@@ -19,7 +19,6 @@ Plugin 'avidal/vim-bundle'
 Plugin 'qpkorr/vim-bufkill'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'mileszs/ack.vim'
-Plugin 'nanotech/jellybeans.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
@@ -34,6 +33,10 @@ Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'Valloric/YouCompleteMe'
 
+" colorschemes
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'meister/vim-snazzyfied'
+
 call vundle#end()
 
 filetype plugin indent on
@@ -42,6 +45,8 @@ filetype plugin indent on
 set ofu=syntaxcomplete#Complete
 
 let g:ycm_rust_src_path = '~/Code/src/github.com/rust-lang/rust/src'
+
+let g:airline_theme = 'snazzyfied'
 
 " open the syntastic fix window automatically
 let g:syntastic_auto_loc_list=1
@@ -204,11 +209,11 @@ endfunction
 " Highlighting {{{
 
 set background=dark " default to dark background
-colorscheme jellybeans
+colorscheme snazzyfied
 
 if &t_Co >= 256 || has("gui_running")
     " color scheme for 256 colors
-    colorscheme jellybeans
+    colorscheme snazzyfied
 endif
 
 if &t_Co > 2 || has("gui_running")
@@ -355,8 +360,6 @@ set formatoptions-=o    " don't start new lines with a comment leader when
                         " pressing o
 au filetype vim set formatoptions-=o
 " }}}
-
-au filetype go setlocal noet ts=4 sts=4 list
 
 " rainbow parens don't work well on my dark background
 let g:rbpt_colorpairs = [

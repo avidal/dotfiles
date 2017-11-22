@@ -185,6 +185,9 @@ $(virtualenv_info)$(repo_char) '
 
 }
 
-function precmd() {
-    prompt_new
-}
+# function precmd() {
+#     prompt_new
+# }
+
+autoload -U promptinit; promptinit
+prompt pure
