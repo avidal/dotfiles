@@ -41,15 +41,20 @@ alias gti='git'
 
 alias bower='noglob bower'
 alias npm='noglob npm'
-
-alias dcos='$HOME/.dcos/dcos/bin/dcos'
+alias bat='noglob bat'
 
 alias docker-gc='docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v /etc:/etc spotify/docker-gc'
 
 alias vim=nvim
 
-alias asap='asap --config-file ~/.config/asap/config.json'
-alias asap-env='source ~/.config/asap/env.sh'
+function randstr() {
+    if [ "$1" == "" ]; then
+        N=32
+    else
+        N=$1
+    fi
+    cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w $N | head -n 1
+}
 
 # everything is in my GOPATH so let's get some aliases to clone git
 # repositories

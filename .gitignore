@@ -1,83 +1,21 @@
-# Ignore everything by default
-*
-
-# zsh{{{
-
-!zshrc
-!zsh
-!zsh/*
-!zsh/data/.gitkeep
-!zsh/completion/.gitkeep
-!zsh/plugins/*
-
-
 # sensitive settings
 zsh/local
+!zsh/local/.gitkeep
+
+zsh/data
+!zsh/data/.gitkeep
 
 # swap files
 zsh/*.sw[po]
 
-# }}}
-
-# git {{{
-
-!gitconfig
-# global ignore file
-!gitexcludes
-
-# ignore file for this repository
-!.gitignore
-# submodule file (ex: used for vim bundles)
-!.gitmodules
-
-# }}}
-
-# vim {{{
-
-!vimrc
-!vim
-!vim/*
-# do want to ignore netrw history file
+# netrwhist history file
 vim/.netrwhist
 
-!vim/autoload/*
-!vim/colors/*
-!vim/doc/*
-!vim/ftdetect/*
-!vim/ftplugin/*
-!vim/indent/*
-!vim/plugin/*
-!vim/spell/*
-!vim/syntax/*
-
-!vim/.tmp
-vim/.tmp/*
+vim/.tmp
 !vim/.tmp/.gitkeep
 
-!vim/.undo
-vim/.undo/*
+vim/.undo
 !vim/.undo/.gitkeep
 
 # Ignore all bundles
-vim/bundle
-# Except vundle
-!vim/bundle/vundle
-
-# }}}
-
-# tmux {{{
-
-!tmux.conf
-!teamocil/
-!teamocil/*
-
-# }}}
-
-# misc {{{
-
-!bin
-!bin/*
-
-!dircolors
-
-# }}}
+vim/plugged

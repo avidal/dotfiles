@@ -7,44 +7,18 @@ runtime! debian.vim
 
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.config/nvim/plugged')
 
-" Let vundle manage itself
-Plugin 'VundleVim/Vundle.vim'
+if filereadable(expand('~/.config/nvim/bundle.vim')) do
+    source ~/.config/nvim/bundle.vim
+endif
 
-" My custom vim bundle
-Plugin 'avidal/vim-bundle'
-
-Plugin 'qpkorr/vim-bufkill'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'mileszs/ack.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-surround'
-Plugin 'wincent/command-t'
-Plugin 'bling/vim-airline'
-Plugin 'fatih/vim-go'
-Plugin 'LokiChaos/vim-tintin'
-Plugin 'wting/rust.vim'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'ervandew/supertab'
-Plugin 'hynek/vim-python-pep8-indent'
-Plugin 'elixir-lang/vim-elixir'
-Plugin 'Valloric/YouCompleteMe'
-
-" colorschemes
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'meister/vim-snazzyfied'
-
-call vundle#end()
+call plug#end()
 
 filetype plugin indent on
 
 " enable omnicomplete
 set ofu=syntaxcomplete#Complete
-
-let g:ycm_rust_src_path = '~/Code/src/github.com/rust-lang/rust/src'
 
 let g:airline_theme = 'snazzyfied'
 
@@ -63,12 +37,13 @@ let NERDTreeIgnore=['\.pyc$', '\~$']
 " show hidden files in NERDTree
 let NERDTreeShowHidden=1
 
-let g:CommandTWildIgnore=&wildignore . ",*/vendor,*/swagger,*/target"
-
 " Change mapleader to ,
 let mapleader=","
 
 let g:Powerline_symbols="fancy"
+
+nnoremap <leader>t :FuzzyOpen<CR>
+nnoremap <leader>g :FuzzyGrep<CR>
 
 " Editing behavior {{{
 set showmode                        " always show the current editing mode
@@ -98,7 +73,7 @@ set incsearch                       " show matches as you type
 set gdefault                        " search/replace with the /g flag by default
 set listchars=tab:▸\ ,trail:·,extends:#,nbsp:·
 
-set nolist                          " hide invisible characters by default
+set list                            " show invisible characters by default
 set pastetoggle=<F2>                " enable/disable paste mode
 set mouse=a                         " enable the mouse if the term supports it
 set fileformats="unix,dos,mac"
@@ -209,11 +184,13 @@ endfunction
 " Highlighting {{{
 
 set background=dark " default to dark background
-colorscheme snazzyfied
+" set termguicolors
+" let g:nord_comment_brightness = 15
+colorscheme nord
 
 if &t_Co >= 256 || has("gui_running")
     " color scheme for 256 colors
-    colorscheme snazzyfied
+    colorscheme nord
 endif
 
 if &t_Co > 2 || has("gui_running")
@@ -393,3 +370,8 @@ if has("gui_running")
     set guioptions-=R
 endif
 " }}}
+
+" enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
+au User Ncm2PopupOpen set completeopt=noinsert,menuone,noselect
+au User Ncm2PopupClose set completeopt=menuone

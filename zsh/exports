@@ -12,16 +12,9 @@ rust_bin=$HOME/.cargo/bin
 home_path=$HOME/.local/bin:$HOME/bin
 local_path=/usr/local/bin:/usr/local/sbin
 
-export PATH=$rust_bin:$home_path:$local_path:$PATH:/usr/lib/git-core
+export PATH=$GOPATH/bin:$rust_bin:$home_path:$local_path:$PATH
 
-export PGPATH=/Applications/Postgres.app/Contents/Versions/latest/bin
 export GOPATH=$HOME/Code
-
-# update path again, this time pushing up the GOPATH
-export PATH=$PGPATH:$GOPATH/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH
-
-# rust-racer needs a source distribution of rust
-export RUST_SRC_PATH=~/.multirust/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src
 
 # dircolors isn't on the $PATH on the mbp until we add the brew gnubin path
 # above
