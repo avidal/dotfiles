@@ -1,4 +1,2 @@
-fpath=( "$HOME/.zsh/plugins" $fpath )
-
 autoload -U promptinit; promptinit
 prompt pure

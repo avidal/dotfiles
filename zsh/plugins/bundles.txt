@@ -1,3 +1,6 @@
 # list of plugins to load via `antibody` (see install.conf.yaml at dotfiles root)
 
+mafredri/zsh-async # dependency of pure prompt
+
 zsh-users/zsh-syntax-highlighting
+sindresorhus/pure

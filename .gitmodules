@@ -4,9 +4,6 @@
 [submodule "deps/dotbot"]
 	path = deps/dotbot
 	url = git://github.com/anishathalye/dotbot
-[submodule "deps/pure-prompt"]
-	path = deps/pure-prompt
-	url = git://github.com/sindresorhus/pure
 [submodule "deps/vim-plug"]
 	path = deps/vim-plug
 	url = git://github.com/junegunn/vim-plug
