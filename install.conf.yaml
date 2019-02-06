@@ -12,6 +12,7 @@
     - cp deps/pure-prompt/pure.zsh zsh/plugins/prompt_pure_setup
     - cp deps/pure-prompt/async.zsh zsh/plugins/async
     - cp deps/diff-so-fancy/third_party/build_fatpack/diff-so-fancy local/bin/diff-so-fancy
+    - antibody bundle < zsh/plugins/bundles.txt > zsh/plugins/bundles.zsh
 
 - link:
     ~/.config/nvim: config/nvim

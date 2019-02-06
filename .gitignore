@@ -25,4 +25,5 @@ config/nvim/plugged
 config/nvim/autoload/plug.vim
 zsh/plugins/prompt_pure_setup
 zsh/plugins/async
+zsh/plugins/bundles.zsh
 local/bin/diff-so-fancy

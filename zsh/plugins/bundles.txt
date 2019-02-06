@@ -1,0 +1,3 @@
+# list of plugins to load via `antibody` (see install.conf.yaml at dotfiles root)
+
+zsh-users/zsh-syntax-highlighting
