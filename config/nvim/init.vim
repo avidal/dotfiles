@@ -9,7 +9,7 @@ filetype off
 
 call plug#begin('~/.config/nvim/plugged')
 
-if filereadable(expand('~/.config/nvim/bundle.vim')) do
+if filereadable(expand('~/.config/nvim/bundle.vim'))
     source ~/.config/nvim/bundle.vim
 endif
 
