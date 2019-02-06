@@ -9,13 +9,20 @@ zsh/data
 zsh/*.sw[po]
 
 # netrwhist history file
-vim/.netrwhist
+config/nvim/.netrwhist
 
-vim/.tmp
-!vim/.tmp/.gitkeep
+config/nvim/.tmp
+!config/nvim/.tmp/.gitkeep
 
-vim/.undo
-!vim/.undo/.gitkeep
+config/nvim/.undo
+!config/nvim/.undo/.gitkeep
 
 # Ignore all bundles
-vim/plugged
+config/nvim/plugged
+
+# The following bits are copied over when running ./install
+# so can be ignored
+config/nvim/autoload/plug.vim
+zsh/plugins/pure_prompt_setup
+zsh/plugins/async
+local/bin/diff-so-fancy
