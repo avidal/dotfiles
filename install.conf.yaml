@@ -1,0 +1,28 @@
+- defaults:
+    link:
+        create: true
+        relink: true
+
+- clean: ["~"]
+
+- shell:
+    - [git submodule update --init --recursive, Updating dependencies]
+    - mkdir -p ~/Code/{src,pkg,bin}
+    - cp deps/vim-plug/plug.vim config/nvim/autoload/plug.vim
+    - cp deps/pure-prompt/pure.zsh zsh/plugins/prompt_pure_setup
+    - cp deps/pure-prompt/async.zsh zsh/plugins/async
+    - cp deps/diff-so-fancy/third_party/build_fatpack/diff-so-fancy local/bin/diff-so-fancy
+
+- link:
+    ~/.config/nvim: config/nvim
+    ~/.local/bin:
+        glob: true
+        path: local/bin/*
+    ~/.zshrc:
+    ~/.zsh:
+    ~/.tmux.conf:
+    ~/.editorconfig:
+    ~/.dircolors:
+    ~/.gitconfig:
+    ~/.gitexcludes:
+    ~/.Xresources:
