@@ -29,9 +29,7 @@ dotfiles=(
     platform
     aliases
     history
-    tmux
     python
-    ruby
     wk
     local
 )
