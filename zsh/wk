@@ -22,7 +22,7 @@ function wk() {
     # Try to find the given folder and cd to it.
     # It should be in $CODE/$1, or $CODE/github.com/$1, or
     # $CODE/bitbucket.org/$1
-    FOLDERS=($CODE $CODE/ng $CODE/github.com $CODE/bitbucket.org)
+    FOLDERS=($CODE $CODE/github.com $CODE/code.cfops.it)
     for folder in $FOLDERS; do
         target=$folder/$1
         if [[ -d $target ]]; then
@@ -40,8 +40,8 @@ function wk() {
 # Completion
 function _wk() {
     compadd $(find $CODE -type d -mindepth 2 -maxdepth 3 -not -ipath '*/.git*' | \
-              ag --nocolor -v '(github.com|bitbucket.org)(/[^\/]+)?$' | \
-              sed -E "s:^$CODE/((github.com|bitbucket.org)/)?::" 2>/dev/null)
+              rg --color=never -v '(github.com|code.cfops.it)(/[^/]+)?$' | \
+              sed -E "s:^$CODE/((github.com|code.cfops.it)/)?::" 2>/dev/null)
 }
 
 compdef _wk wk

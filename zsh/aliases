@@ -59,14 +59,18 @@ function randstr() {
 # everything is in my GOPATH so let's get some aliases to clone git
 # repositories
 function gc() {
-    git clone $1 ~/Code/src/github.com/$1
+    git clone git@github.com:$1 $HOME/Code/src/github.com/$1 "${@:2}"
 }
 
-function bc() {
-    git clone git@bitbucket.org:$1 ~/Code/src/bitbucket.org/$1
+function stash() {
+    pushd > /dev/null
+    git clone code.cfops.it:$1 $HOME/Code/src/code.cfops.it/$1 "${@:2}"
+    cd $HOME/Code/src/code.cfops.it/$1
+    git config --local user.email avidal@cloudflare.com
+    popd > /dev/null
 }
 
 # some directory aliases so i can cd ~work
-work=~/Code/src/bitbucket.org/hipchat
+work=~/Code/src/code.cfops.it
 personal=~/Code/src/github.com/avidal
 : ~work ~personal
