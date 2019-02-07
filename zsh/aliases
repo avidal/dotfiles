@@ -14,10 +14,8 @@ alias svs='sudo supervisorctl'
 alias apt-get='sudo apt-get'
 alias apt-cache='sudo apt-cache'
 alias apt-file='sudo apt-file'
-
+alias apt='sudo apt'
 alias pacman='sudo pacman'
-alias aura='sudo aura'
-alias pac='pacman'
 
 autoload -U zmv
 alias mmv='noglob zmv -W'
@@ -39,7 +37,6 @@ alias gl='git lg'
 alias g='git'
 alias gti='git'
 
-alias bower='noglob bower'
 alias npm='noglob npm'
 alias bat='noglob bat'
 
@@ -47,13 +44,10 @@ alias docker-gc='docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v
 
 alias vim=nvim
 
+# generates a random string, specify length as the first argument (default is
+# 32)
 function randstr() {
-    if [ "$1" == "" ]; then
-        N=32
-    else
-        N=$1
-    fi
-    cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w $N | head -n 1
+    cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -n 1
 }
 
 # everything is in my GOPATH so let's get some aliases to clone git
