@@ -1,5 +1,4 @@
 export GITHUB_USER="avidal"
-export TERM="screen-256color"
 export DISPLAY=:0.0
 export EDITOR=nvim
 
