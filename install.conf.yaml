@@ -1,0 +1,28 @@
+- defaults:
+    link:
+        create: true
+        relink: true
+
+- clean: ["~"]
+
+- shell:
+    - [git submodule update --init --recursive, Updating dependencies]
+    - mkdir -p ~/Code/{src,pkg,bin}
+    - cp deps/vim-plug/plug.vim config/nvim/autoload/plug.vim
+    - cp deps/diff-so-fancy/third_party/build_fatpack/diff-so-fancy local/bin/diff-so-fancy
+    - antibody bundle < zsh/autoload/bundles.txt > zsh/autoload/bundles.zsh
+
+- link:
+    ~/.config/nvim: config/nvim
+    ~/.config/alacritty: config/alacritty
+    ~/.local/bin:
+        glob: true
+        path: local/bin/*
+    ~/.zshrc:
+    ~/.zsh:
+    ~/.tmux.conf:
+    ~/.editorconfig:
+    ~/.dircolors:
+    ~/.gitconfig:
+    ~/.gitexcludes:
+    ~/.Xresources:

@@ -1,2 +1,0 @@
-# set term to screen-256color when in tmux
-[ -n "$TMUX" ] && export TERM=screen-256color

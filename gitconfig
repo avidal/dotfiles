@@ -9,7 +9,7 @@
 [core]
     excludesfile = ~/.gitexcludes
     ; use the fancy diff-highlight as the pager
-    pager = diff-highlight | diff-so-fancy | less --tabs=1,5 -R
+    pager = "diff-so-fancy | less --tabs=4 -RFX"
 [alias]
     br = branch -a
     ci = commit
@@ -21,6 +21,7 @@
     locals = !git branch -vv | grep \": gone]\" | awk '{ print $1 }'
 [push]
     default = simple
+    followTags = true
 [rerere]
     enabled = true
 [mergetool "vimdiff"]
@@ -34,7 +35,5 @@
 [diff]
     tool = vimdiff
     prompt = false
-[url "git@bitbucket.org:"]
-    insteadOf = https://bitbucket.org/
-[url "ssh://git@stash.atlassian.com:7997/"]
-	insteadOf = https://stash.atlassian.com/
+[status]
+	submoduleSummary = true
