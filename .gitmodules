@@ -7,3 +7,6 @@
 [submodule "deps/vim-plug"]
 	path = deps/vim-plug
 	url = git://github.com/junegunn/vim-plug
+[submodule "deps/asdf"]
+	path = deps/asdf
+	url = git://github.com/asdf-vm/asdf

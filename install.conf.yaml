@@ -15,6 +15,7 @@
 - link:
     ~/.config/nvim: config/nvim
     ~/.config/alacritty: config/alacritty
+    ~/.config/asdf: deps/asdf
     ~/.local/bin:
         glob: true
         path: local/bin/*

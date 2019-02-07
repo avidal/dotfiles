@@ -1,11 +1,11 @@
-export ZSH=~/.zsh
+export ZSH="$HOME/.zsh"
 
 # compsys initialization
 autoload -Uz compinit
 
 typeset -i updated_at=$(\
-    date +'%j' -r ~/.zcompdump 2>/dev/null || \
-    stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null \
+    date +'%j' -r $HOME/.zcompdump 2>/dev/null || \
+    stat -f '%Sm' -t '%j' $HOME/.zcompdump 2>/dev/null \
 )
 if [ $(date '+%j') != $updated_at ]; then
     compinit -i
@@ -42,10 +42,18 @@ done
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 
 bindkey -M emacs '^P' history-substring-search-up
 bindkey -M emacs '^N' history-substring-search-down
+
+# this must come after everything else to make sure the completions and path
+# mangling work
+asdf_dir="$HOME/.config/asdf"
+if [[ -d $asdf_dir ]]; then
+  source $asdf_dir/asdf.sh
+  source $asdf_dir/completions/asdf.bash
+fi
