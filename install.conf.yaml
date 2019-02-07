@@ -10,7 +10,7 @@
     - mkdir -p ~/Code/{src,pkg,bin}
     - cp deps/vim-plug/plug.vim config/nvim/autoload/plug.vim
     - cp deps/diff-so-fancy/third_party/build_fatpack/diff-so-fancy local/bin/diff-so-fancy
-    - antibody bundle < zsh/plugins/bundles.txt > zsh/plugins/bundles.zsh
+    - antibody bundle < zsh/autoload/bundles.txt > zsh/autoload/bundles.zsh
 
 - link:
     ~/.config/nvim: config/nvim

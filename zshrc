@@ -1,20 +1,28 @@
 export ZSH=~/.zsh
 
 # compsys initialization
-autoload -U compinit
-compinit
+autoload -Uz compinit
+
+typeset -i updated_at=$(\
+    date +'%j' -r ~/.zcompdump 2>/dev/null || \
+    stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null \
+)
+if [ $(date '+%j') != $updated_at ]; then
+    compinit -i
+else
+    compinit -C -i
+fi
 
 # use a completion cache, stored in completion.cache
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path $ZSH/data/completion.cache
 
-# Add brew installed zsh completion funcs to $fpath
-fpath=(/usr/local/share/zsh/site-functions/ $fpath)
-fpath=(/usr/local/share/zsh-completions $fpath)
+zmodload -i zsh/complist
 
-# Enable completion functions in .zsh/completion
-fpath=($ZSH/completion $fpath)
+for file in $ZSH/autoload/*.zsh; do
+    source $file
+done
 
 dotfiles=(
     exports
@@ -25,7 +33,6 @@ dotfiles=(
     python
     ruby
     wk
-    prompt
     local
 )
 
@@ -33,11 +40,6 @@ for file in $dotfiles; do
     file=$ZSH/$file
     [[ -f $file ]] && source $file
 done
-
-for file in $ZSH/plugins/*.zsh; do
-    source $file
-done
-
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"

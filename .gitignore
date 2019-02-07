@@ -23,7 +23,5 @@ config/nvim/plugged
 # The following bits are copied over when running ./install
 # so can be ignored
 config/nvim/autoload/plug.vim
-zsh/plugins/prompt_pure_setup
-zsh/plugins/async
-zsh/plugins/bundles.zsh
+zsh/autoload/bundles.zsh
 local/bin/diff-so-fancy

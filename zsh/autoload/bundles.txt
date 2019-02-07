@@ -2,5 +2,6 @@
 
 mafredri/zsh-async # dependency of pure prompt
 
+zsh-users/zsh-completions
 zsh-users/zsh-syntax-highlighting
 sindresorhus/pure
