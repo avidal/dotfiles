@@ -3,7 +3,7 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'mileszs/ack.vim'
 Plug 'pangloss/vim-javascript'
-Plug 'scrooloose/syntastic'
+Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-surround'
 Plug 'cloudhead/neovim-fuzzy'
 Plug 'vim-airline/vim-airline'
@@ -24,6 +24,8 @@ Plug 'ncm2/ncm2-tern'
 Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
 Plug 'roxma/nvim-yarp'
 Plug 'zah/nim.vim'
+Plug 'hashivim/vim-terraform'
+Plug 'juliosueiras/vim-terraform-completion'
 
 " colorschemes
 Plug 'nanotech/jellybeans.vim'
