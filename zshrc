@@ -20,6 +20,9 @@ zstyle ':completion:*' cache-path $ZSH/data/completion.cache
 
 zmodload -i zsh/complist
 
+# disable the pure prompt from trying to git pull to show remote status
+PURE_GIT_PULL=0
+
 for file in $ZSH/autoload/*.zsh; do
     source $file
 done

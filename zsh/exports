@@ -18,3 +18,5 @@ export GOPATH=$HOME/Code
 # dircolors isn't on the $PATH on the mbp until we add the brew gnubin path
 # above
 eval `dircolors ~/.dircolors`
+
+export XDG_DATA_DIRS="/var/lib/snapd/desktop:$XDG_DATA_DIRS"
