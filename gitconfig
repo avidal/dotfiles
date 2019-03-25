@@ -19,6 +19,7 @@
     root = !pwd
     rebar = !git rebase -i $(git merge-base develop HEAD)
     locals = !git branch -vv | grep \": gone]\" | awk '{ print $1 }'
+    fixup = !sh -c 'REV=$(git rev-parse $1) && git commit --fixup $@' -
 [push]
     default = simple
     followTags = true
