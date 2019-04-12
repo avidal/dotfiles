@@ -10,3 +10,4 @@
 # os cruft
 .DS_Store
 Thumbs.db
+.envrc
