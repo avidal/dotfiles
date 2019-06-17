@@ -30,6 +30,8 @@ let g:syntastic_javascript_checkers = ['jshint']
 
 let g:go_list_type = "quickfix"
 let g:go_fmt_command = "goimports"
+let g:go_def_mode = "gopls"
+let g:go_info_mode = "gopls"
 
 " filter out a few unnecessary files from the nerd tree
 let NERDTreeIgnore=['\.pyc$', '\~$']
@@ -258,25 +260,11 @@ nmap <leader>Y "+yy
 nmap <leader>p "+p
 nmap <leader>P "+P
 
-" set yankring history directory
-let g:yankring_history_dir = '$HOME/.vim/.tmp'
-
-" map ,r to show/hide the yank ring
-nmap <leader>r :YRShow<CR>
-
-" edit/source vimrc with ,ev and ,sv
-" Disabled for now because it makes ,e take too long
-" nmap <silent> <leader>ev :e $MYVIMRC<CR>
-" nmap <silent> <leader>sv :so $MYVIMRC<CR>
-
 " use ,h to clear search highlighting
 nmap <silent> <leader>h :nohlsearch<CR>
 
 " use ,s to enable/disable showing invisible chars
 nmap <silent> <leader>s :set list!<CR>
-
-" use ,e to open buffers in MRU
-nmap <silent> <leader>e :CommandTMRU<CR>
 
 " jj/jk for getting out of insert mode
 inoremap jj <Esc>
