@@ -7,7 +7,7 @@
 
 - shell:
     - [git submodule update --init --recursive, Updating dependencies]
-    - mkdir -p ~/Code/{src,pkg,bin}
+    - mkdir -p ~/Code/{work,personal}
     - cp deps/vim-plug/plug.vim config/nvim/autoload/plug.vim
     - cp deps/diff-so-fancy/third_party/build_fatpack/diff-so-fancy local/bin/diff-so-fancy
     - antibody bundle < zsh/autoload/bundles.txt > zsh/autoload/bundles.zsh
