@@ -50,21 +50,23 @@ function randstr() {
     cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -n 1
 }
 
-# everything is in my GOPATH so let's get some aliases to clone git
-# repositories
-function gc() {
-    git clone git@github.com:$1 $HOME/Code/src/github.com/$1 "${@:2}"
+function clone-git() {
+    git clone git@$1:$2 $HOME/Code/$1/$2 "${@:3}"
 }
 
-function stash() {
+function clone-github() {
+    git clone git@github.com:$1 $HOME/Code/github.com/$1 "${@:2}"
+}
+
+function clone-work() {
     pushd > /dev/null
-    git clone code.cfops.it:$1 $HOME/Code/src/code.cfops.it/$1 "${@:2}"
-    cd $HOME/Code/src/code.cfops.it/$1
+    git clone code.cfops.it:$1 $HOME/Code/code.cfops.it/$1 "${@:2}"
+    cd $HOME/Code/code.cfops.it/$1
     git config --local user.email avidal@cloudflare.com
     popd > /dev/null
 }
 
 # some directory aliases so i can cd ~work
-work=~/Code/src/code.cfops.it
-personal=~/Code/src/github.com/avidal
+work=~/Code/code.cfops.it
+personal=~/Code/github.com/avidal
 : ~work ~personal

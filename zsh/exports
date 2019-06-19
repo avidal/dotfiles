@@ -11,9 +11,8 @@ rust_bin=$HOME/.cargo/bin
 home_path=$HOME/.local/bin:$HOME/bin
 local_path=/usr/local/bin:/usr/local/sbin
 
-export PATH=$GOPATH/bin:$rust_bin:$home_path:$local_path:$PATH
-
-export GOPATH=$HOME/Code
+export PATH=$rust_bin:$home_path:$local_path:$PATH
+export GO111MODULE=on
 
 # dircolors isn't on the $PATH on the mbp until we add the brew gnubin path
 # above

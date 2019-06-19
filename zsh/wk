@@ -11,26 +11,15 @@
 #
 # Also deactivates any currently active virtualenv, just for neatness' sake.
 #
-CODE=$HOME/Code/src
-RCFILE=".wkrc"
+CODE=$HOME/Code
 
 function wk() {
-    # deactivate/workon will fail silently if project is not a virtualenv.
-    deactivate 2>/dev/null
-    workon $1 2>/dev/null
-
     # Try to find the given folder and cd to it.
-    # It should be in $CODE/$1, or $CODE/github.com/$1, or
-    # $CODE/bitbucket.org/$1
-    FOLDERS=($CODE $CODE/github.com $CODE/code.cfops.it)
+    FOLDERS=($CODE/github.com $CODE/code.cfops.it $CODE/gitlab.com $CODE/bitbucket.org)
     for folder in $FOLDERS; do
         target=$folder/$1
         if [[ -d $target ]]; then
             cd $target
-            # Also execute any project init file
-            if [[ -f $RCFILE ]]; then
-                . $RCFILE
-            fi
             return 0
         fi
     done
@@ -40,8 +29,8 @@ function wk() {
 # Completion
 function _wk() {
     compadd $(find $CODE -type d -mindepth 2 -maxdepth 3 -not -ipath '*/.git*' | \
-              rg --color=never -v '(github.com|code.cfops.it)(/[^/]+)?$' | \
-              sed -E "s:^$CODE/((github.com|code.cfops.it)/)?::" 2>/dev/null)
+              rg --color=never -v '(bitbucket.org|gitlab.com|github.com|code.cfops.it)(/[^/]+)?$' | \
+              sed -E "s:^$CODE/((bitbucket.org|gitlab.com|github.com|code.cfops.it)/)?::" 2>/dev/null)
 }
 
 compdef _wk wk
