@@ -54,17 +54,6 @@ bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey -M emacs '^P' history-substring-search-up
 bindkey -M emacs '^N' history-substring-search-down
 
-# this must come after everything else to make sure the completions and path
-# mangling work
-asdf_dir="$HOME/.config/asdf"
-if [[ -d $asdf_dir ]]; then
-  source $asdf_dir/asdf.sh
-  source $asdf_dir/completions/asdf.bash
-fi
-
 which direnv 2>&1 >/dev/null && eval "$(direnv hook zsh)";
 
 which keychain 2>&1 >/dev/null && eval $(keychain -q --agents ssh --attempts 3 --eval id_rsa);
-
-export NVM_DIR="$XDG_CONFIG_HOME/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
