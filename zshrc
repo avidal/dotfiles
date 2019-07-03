@@ -62,3 +62,5 @@ if [[ -d $asdf_dir ]]; then
 fi
 
 which direnv 2>&1 >/dev/null && eval "$(direnv hook zsh)";
+
+which keychain 2>&1 >/dev/null && eval $(keychain -q --agents ssh --attempts 3 --eval id_rsa);

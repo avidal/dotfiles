@@ -11,3 +11,5 @@
 .DS_Store
 Thumbs.db
 .envrc
+.vscode
+.tool-versions

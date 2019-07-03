@@ -10,6 +10,7 @@
     excludesfile = ~/.gitexcludes
     ; use the fancy diff-highlight as the pager
     pager = "diff-so-fancy | less --tabs=4 -RFX"
+	autocrlf = input
 [alias]
     br = branch -a
     ci = commit
