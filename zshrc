@@ -1,4 +1,5 @@
 export ZSH="$HOME/.zsh"
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # compsys initialization
 autoload -Uz compinit
@@ -64,3 +65,6 @@ fi
 which direnv 2>&1 >/dev/null && eval "$(direnv hook zsh)";
 
 which keychain 2>&1 >/dev/null && eval $(keychain -q --agents ssh --attempts 3 --eval id_rsa);
+
+export NVM_DIR="$XDG_CONFIG_HOME/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
