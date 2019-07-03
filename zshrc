@@ -24,10 +24,6 @@ zmodload -i zsh/complist
 # disable the pure prompt from trying to git pull to show remote status
 PURE_GIT_PULL=0
 
-for file in $ZSH/autoload/*.zsh; do
-    source $file
-done
-
 dotfiles=(
     exports
     platform
@@ -41,6 +37,10 @@ dotfiles=(
 for file in $dotfiles; do
     file=$ZSH/$file
     [[ -f $file ]] && source $file
+done
+
+for file in $ZSH/autoload/*.zsh; do
+    source $file
 done
 
 ### Added by the Heroku Toolbelt

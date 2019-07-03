@@ -20,3 +20,6 @@ export GO111MODULE=on
 eval `dircolors ~/.dircolors`
 
 export XDG_DATA_DIRS="/var/lib/snapd/desktop:$XDG_DATA_DIRS"
+export XDG_CONFIG_HOME="$HOME/.config"
+export NVM_DIR="$XDG_CONFIG_HOME/nvm"
+export NVM_LAZY_LOAD=true
