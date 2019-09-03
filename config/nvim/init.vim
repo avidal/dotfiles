@@ -39,6 +39,9 @@ let NERDTreeIgnore=['\.pyc$', '\~$']
 " show hidden files in NERDTree
 let NERDTreeShowHidden=1
 
+" don't nag for missing python2
+let g:python_support_python2_require = 0
+
 " Change mapleader to ,
 let mapleader=","
 
