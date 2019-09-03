@@ -20,6 +20,17 @@ config/nvim/.undo
 # Ignore all bundles
 config/nvim/plugged
 
+config/fish/*
+!config/fish/config.fish
+!config/fish/fishfile
+
+!config/fish/conf.d
+config/fish/conf.d/*
+!config/fish/conf.d/000-*
+!config/fish/conf.d/999-*
+config/fish/conf.d/999-private.fish
+config/fish/conf.d/000-private.fish
+
 # The following bits are copied over when running ./install
 # so can be ignored
 config/nvim/autoload/plug.vim
