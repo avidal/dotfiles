@@ -1,31 +1,23 @@
-alias ls='ls --color=auto'
-alias la='ls -al'
-alias ll='ls -l'
+alias la 'ls -al'
+alias ll 'ls -l'
 
-alias ungron='gron -u'
+function lsd -d 'List only directories'
+    ls -d */ | sed -Ee 's,/+$,,'
+end
 
-alias svim='sudo vim'
-alias stail='sudo tail'
-alias svs='sudo supervisorctl'
+alias ungron 'gron -u'
+alias svim 'sudo nvim'
+alias stail 'sudo tail'
+alias rmpyc 'rm **/*.pyc'
+alias ports 'sudo lsof -i -P -sTCP:LISTEN'
 
-# Alias package managers to always use sudo
-alias apt-get='sudo apt-get'
-alias apt-cache='sudo apt-cache'
-alias apt-file='sudo apt-file'
-alias apt='sudo apt'
-alias pacman='sudo pacman'
-alias dnf='sudo dnf'
-
-alias rmpyc='rm **/*.pyc'
-alias ports='sudo lsof -i -P -sTCP:LISTEN'
-
-alias gs='git st'
-alias gar='git add -A (git root)'
-alias gci='git commit'
-alias gd='git diff'
-alias gl='git lg'
-alias g='git'
-alias gti='git'
+alias gs 'git st'
+alias gar 'git add -A (git root)'
+alias gci 'git commit'
+alias gd 'git diff'
+alias gl 'git lg'
+abbr -a g git
+abbr -a gti git
 
 alias docker-gc='docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v /etc:/etc spotify/docker-gc'
 

@@ -10,3 +10,7 @@ set -gx GO111MODULE on
 if type -q direnv
     direnv hook fish | source
 end
+
+if type -q dircolors
+    eval (dircolors --c-shell ~/.config/dircolors/dircolors)
+end
