@@ -33,4 +33,4 @@ Plug 'juliosueiras/vim-terraform-completion'
 Plug 'nanotech/jellybeans.vim'
 Plug 'meister/vim-snazzyfied'
 Plug 'arcticicestudio/nord-vim'
-
+Plug 'cocopon/iceberg.vim'

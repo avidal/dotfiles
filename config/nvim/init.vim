@@ -189,19 +189,11 @@ endfunction
 " Highlighting {{{
 
 set t_Co=256
-set background=dark " default to dark background
 if (&t_Co >= 256 && $term =~ '^xterm')
     set t_ut= | set ttyscroll=1
 endif
 
-" set termguicolors
-" let g:nord_comment_brightness = 15
-colorscheme nord
-
-if &t_Co >= 256 || has("gui_running")
-    " color scheme for 256 colors
-    colorscheme nord
-endif
+colorscheme iceberg
 
 if &t_Co > 2 || has("gui_running")
     syntax on                       " enable syntax highlighting when the term
