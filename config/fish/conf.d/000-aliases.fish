@@ -10,6 +10,7 @@ alias svim 'sudo nvim'
 alias stail 'sudo tail'
 alias rmpyc 'rm **/*.pyc'
 alias ports 'sudo lsof -i -P -sTCP:LISTEN'
+alias dnf 'command sudo dnf'
 
 alias gs 'git st'
 alias gar 'git add -A (git root)'
