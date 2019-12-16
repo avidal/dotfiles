@@ -20,18 +20,10 @@ filetype plugin indent on
 " enable omnicomplete
 set ofu=syntaxcomplete#Complete
 
-let g:airline_theme = 'snazzyfied'
-
-" open the syntastic fix window automatically
-let g:syntastic_auto_loc_list=1
-
-" use jshint and eslint for javascript
-let g:syntastic_javascript_checkers = ['jshint']
-
 let g:go_list_type = "quickfix"
 let g:go_fmt_command = "goimports"
-let g:go_def_mode = "gopls"
-let g:go_info_mode = "gopls"
+" disable :GoDef and :GoInfo, preferring coc.nvim (gd, gi)
+let g:go_def_mapping_enabled = 0
 
 " filter out a few unnecessary files from the nerd tree
 let NERDTreeIgnore=['\.pyc$', '\~$']
@@ -122,7 +114,12 @@ set encoding=utf-8
 set lazyredraw                      " don't update display while running macros
 set laststatus=2                    " always show status line
 set cmdheight=2                     " 2-line status bar
-set textwidth=79
+set textwidth=99
+" decreases the default time for CursorHold & CursorHoldUI
+set updatetime=300
+" don't give |ins-completion-menu| messages
+set shortmess+=c
+set signcolumn=yes
 
 if v:version >= 730
     set colorcolumn=81              " draw a column at col 81
@@ -171,7 +168,7 @@ set nomodeline                      " disable modelines for security
 set cursorline                      " draw a line below the cursor
 
 " tame quickfix window (toggle with ,f)
-nmap <silent> <leader>f :QFix<CR>
+nmap <silent> <leader>q :QFix<CR>
 
 command! -bang -nargs=? QFix call QFixToggle(<bang>0)
 function! QFixToggle(forced)
@@ -189,6 +186,8 @@ endfunction
 " Highlighting {{{
 
 set t_Co=256
+set termguicolors
+
 if (&t_Co >= 256 && $term =~ '^xterm')
     set t_ut= | set ttyscroll=1
 endif
@@ -212,11 +211,6 @@ nnoremap ; :
 
 " map <F1> to <Esc>
 map! <F1> <Esc>
-
-map gd <Esc>:YcmCompleter GoTo
-
-" close the current window, fast!
-nnoremap <leader>q :q<CR>
 
 " use Q to format the current paragraph (or selection)
 vmap Q gq
@@ -359,7 +353,49 @@ if has("gui_running")
 endif
 " }}}
 
-" enable ncm2 for all buffers
-autocmd BufEnter * call ncm2#enable_for_buffer()
-au User Ncm2PopupOpen set completeopt=noinsert,menuone,noselect
-au User Ncm2PopupClose set completeopt=menuone
+" coc.nvim settings {{{
+
+" insert completion on c-space
+inoremap <silent><expr> <c-space> coc#refresh
+
+" navigate diagnostics with [c and ]c
+nmap <silent> [c <Plug>(coc-diagnostic-prev)
+nmap <silent> ]c <Plug>(coc-diagnostic-next)
+
+" keybindings for goto
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" open docs in a preview window
+nnoremap <silent> U :call <SID>show_documentation()<CR>
+
+" rename current word
+nmap <leader>rn <Plug>(coc-rename)
+
+" ,f to reformat selection
+vmap <leader>f <Plug>(coc-format-selected)
+nmap <leader>f <Plug>(coc-format-selected)
+
+" Show all diagnostics
+nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+" Manage extensions
+nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+" Show commands
+nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+" Find symbol of current document
+nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+" Search workspace symbols
+nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+" Do default action for next item.
+nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+" Do default action for previous item.
+nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+" Resume latest coc list
+nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+" highlight the current symbol after sitting on it for a moment
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" }}}

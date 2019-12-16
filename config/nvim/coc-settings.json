@@ -1,0 +1,30 @@
+{
+  "coc.preferences.colorSupport": true,
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": [
+        "go.mod",
+        ".git/"
+      ],
+      "filetypes": [
+        "go"
+      ]
+    },
+    "ekam": {
+      "command": "ekam-langserve",
+      "args": ["localhost:41315"],
+      "trace.server": "verbose",
+      "filetypes": [
+        "cpp", "c"
+      ],
+      "rootPatterns": ["compile_flags.txt", "compile_commands.json"]
+    },
+    "clangd": {
+      "command": "clangd",
+      "args": ["--background-index"],
+      "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
+      "filetypes": ["c", "cpp"]
+    }
+  }
+}
