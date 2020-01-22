@@ -23,6 +23,7 @@ config/nvim/plugged
 config/fish/*
 !config/fish/config.fish
 !config/fish/fishfile
+!config/fish/functions/tldr.fish
 
 !config/fish/conf.d
 config/fish/conf.d/*
