@@ -20,9 +20,13 @@ config/nvim/.undo
 # Ignore all bundles
 config/nvim/plugged
 
+!config/fish
 config/fish/*
 !config/fish/config.fish
 !config/fish/fishfile
+
+!config/fish/functions
+config/fish/functions/*
 !config/fish/functions/tldr.fish
 
 !config/fish/conf.d
