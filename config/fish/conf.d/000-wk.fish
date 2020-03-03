@@ -4,14 +4,14 @@
 set CODE $HOME/Code
 
 function wk
-    cd $CODE/*/$argv
+    cd $CODE/$argv
 end
 
 function _wk_complete
     # find all owner/repo folders in $CODE/
-    # and strip the first three path components
-    find $CODE -mindepth 3 -maxdepth 3 -type d | \
-        sed -E "s:^$CODE/[^/]+/::" 2>/dev/null
+    # and strip the $CODE/ path components to clean it up
+    find $CODE -mindepth 2 -maxdepth 2 -type d | \
+        sed -E "s:^$CODE/::" 2>/dev/null
 end
 
 complete -c wk -f -a '(_wk_complete)'
