@@ -12,7 +12,7 @@ Plug 'fatih/vim-go'
 Plug 'wting/rust.vim'
 
 " completion
-Plug 'neoclide/coc.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " general editing
 Plug 'qpkorr/vim-bufkill'
