@@ -1,9 +1,13 @@
-set rust_bin $HOME/.cargo/bin
-set go_bin $HOME/go/bin
-set home_path $HOME/.local/bin:$HOME/bin
-set local_path /usr/local/bin:/usr/local/sbin
+function path_add
+    contains $argv $PATH; or set -p PATH $argv
+end
 
-set -gx PATH $rust_bin $go_bin $home_path $local_path $PATH
+path_add /usr/local/sbin
+path_add /usr/local/bin
+path_add $HOME/.cargo/bin
+path_add $HOME/go/bin
+path_add $HOME/.local/bin
+
 set -gx GO111MODULE on
 
 if type -q direnv
