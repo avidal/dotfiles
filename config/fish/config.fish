@@ -10,12 +10,19 @@ path_add $HOME/.local/bin
 
 set -gx GO111MODULE on
 
+set -gx PYENV_ROOT ~/Code/pyenv/pyenv
+path_add $PYENV_ROOT/bin
+
 if type -q direnv
     direnv hook fish | source
 end
 
 if type -q dircolors
     eval (dircolors --c-shell ~/.config/dircolors/dircolors)
+end
+
+if type -q pyenv
+    pyenv init - | source
 end
 
 # auto-install fisher
