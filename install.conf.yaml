@@ -11,14 +11,11 @@
 
 - link:
     ~/.config/nvim: config/nvim
-    ~/.config/alacritty: config/alacritty
     ~/.config/fish: config/fish
     ~/.config/dircolors: config/dircolors
     ~/.local/bin:
         glob: true
         path: local/bin/*
-    ~/.zshrc:
-    ~/.zsh:
     ~/.tmux.conf:
     ~/.editorconfig:
     ~/.gitconfig:
