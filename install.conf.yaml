@@ -8,7 +8,6 @@
 - shell:
     - [git submodule update --init --recursive, Updating dependencies]
     - cp deps/vim-plug/plug.vim config/nvim/autoload/plug.vim
-    - cp deps/diff-so-fancy/third_party/build_fatpack/diff-so-fancy local/bin/diff-so-fancy
 
 - link:
     ~/.config/nvim: config/nvim
