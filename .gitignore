@@ -1,13 +1,3 @@
-# sensitive settings
-zsh/local
-!zsh/local/.gitkeep
-
-zsh/data
-!zsh/data/.gitkeep
-
-# swap files
-zsh/*.sw[po]
-
 # netrwhist history file
 config/nvim/.netrwhist
 
@@ -39,5 +29,3 @@ config/fish/conf.d/000-private.fish
 # The following bits are copied over when running ./install
 # so can be ignored
 config/nvim/autoload/plug.vim
-zsh/autoload/bundles.zsh
-local/bin/diff-so-fancy
