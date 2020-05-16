@@ -2,9 +2,6 @@
 " This must be first, because it changes other options as a side effect
 set nocompatible
 
-" load debian paths when applicable
-runtime! debian.vim
-
 filetype off
 
 call plug#begin('~/.config/nvim/plugged')
@@ -119,10 +116,10 @@ set textwidth=99
 set updatetime=300
 " don't give |ins-completion-menu| messages
 set shortmess+=c
-set signcolumn=yes
+set signcolumn=auto
 
 if v:version >= 730
-    set colorcolumn=81              " draw a column at col 81
+    set colorcolumn=80              " draw a column at col 80
 endif
 
 " statusline from http://www.linux.com/archive/feature/120126
@@ -356,7 +353,7 @@ endif
 " coc.nvim settings {{{
 
 " insert completion on c-space
-inoremap <silent><expr> <c-space> coc#refresh
+inoremap <silent><expr> <c-space> coc#refresh()
 
 " navigate diagnostics with [c and ]c
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
@@ -370,6 +367,13 @@ nmap <silent> gr <Plug>(coc-references)
 
 " open docs in a preview window
 nnoremap <silent> U :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
 
 " rename current word
 nmap <leader>rn <Plug>(coc-rename)
