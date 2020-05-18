@@ -16,10 +16,15 @@
       command: "command -q delta; or dnf install git-delta"
       stdin: true
       stdout: true
+    -
+      command: "command -q direnv; or dnf install direnv"
+      stdin: true
+      stdout: true
 
 - link:
     ~/.config/nvim: config/nvim
     ~/.config/fish: config/fish
+    ~/.config/direnv: config/direnv
     ~/.config/dircolors: config/dircolors
     ~/.local/bin:
         glob: true
