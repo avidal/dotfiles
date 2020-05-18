@@ -8,6 +8,14 @@
 - shell:
     - [git submodule update --init --recursive, Updating dependencies]
     - cp deps/vim-plug/plug.vim config/nvim/autoload/plug.vim
+    -
+      command: "command -q fzf; or dnf install fzf"
+      stdin: true
+      stdout: true
+    -
+      command: "command -q delta; or dnf install git-delta"
+      stdin: true
+      stdout: true
 
 - link:
     ~/.config/nvim: config/nvim
