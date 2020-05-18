@@ -1,16 +1,27 @@
+set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
+
 function try_prepend --description 'try_prepend PATH /foo/bar'
-    contains $argv[2] $argv[1]; or set -p $argv[1] $argv[2]
+    contains $argv[2] $$argv[1]; or set -p $argv[1] $argv[2]
 end
 
 try_prepend PATH /usr/local/sbin
 try_prepend PATH /usr/local/bin
 try_prepend PATH $HOME/.cargo/bin
-try_prepend PATH $HOME/go/bin
 try_prepend PATH $HOME/.local/bin
 
-if test -d ~/Code/pyenv/pyenv
-    set -gx PYENV_ROOT ~/Code/pyenv/pyenv
+if test -d $XDG_CONFIG_HOME/pyenv
+    set -gx PYENV_ROOT $XDG_CONFIG_HOME/pyenv
     try_prepend PATH $PYENV_ROOT/bin
+end
+
+if test -d $XDG_CONFIG_HOME/goenv
+    set -gx GOENV_ROOT $XDG_CONFIG_HOME/goenv
+    try_prepend PATH $GOENV_ROOT/bin
+end
+
+if test -d $XDG_CONFIG_HOME/nodenv
+    set -gx NODENV_ROOT $XDG_CONFIG_HOME/nodenv
+    try_prepend PATH $NODENV_ROOT/bin
 end
 
 if type -q direnv
@@ -25,7 +36,14 @@ if type -q pyenv
     pyenv init - | source
 end
 
-set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
+if type -q goenv
+    goenv init - | source
+end
+
+if type -q nodenv
+    nodenv init - | source
+end
+
 set -gx GO111MODULE on
 
 alias la 'ls -al'

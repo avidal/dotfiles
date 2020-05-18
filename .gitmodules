@@ -4,3 +4,15 @@
 [submodule "deps/vim-plug"]
 	path = deps/vim-plug
 	url = git://github.com/junegunn/vim-plug
+[submodule "deps/pyenv"]
+	path = deps/pyenv
+	url = https://github.com/pyenv/pyenv
+[submodule "deps/nodenv"]
+	path = deps/nodenv
+	url = https://github.com/nodenv/nodenv
+[submodule "deps/goenv"]
+	path = deps/goenv
+	url = https://github.com/syndbg/goenv
+[submodule "deps/node-build"]
+	path = deps/node-build
+	url = https://github.com/nodenv/node-build
