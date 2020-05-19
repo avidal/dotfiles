@@ -1,0 +1,2 @@
+# allow reading from .python-version .go-version etc
+legacy_version_file = yes

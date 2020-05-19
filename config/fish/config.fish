@@ -1,4 +1,5 @@
 set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
+set -q XDG_DATA_HOME; or set XDG_DATA_HOME ~/.local/share
 
 function try_prepend --description 'try_prepend PATH /foo/bar'
     contains $argv[2] $$argv[1]; or set -p $argv[1] $argv[2]
@@ -9,21 +10,6 @@ try_prepend PATH /usr/local/bin
 try_prepend PATH $HOME/.cargo/bin
 try_prepend PATH $HOME/.local/bin
 
-if test -d $XDG_CONFIG_HOME/pyenv
-    set -gx PYENV_ROOT $XDG_CONFIG_HOME/pyenv
-    try_prepend PATH $PYENV_ROOT/bin
-end
-
-if test -d $XDG_CONFIG_HOME/goenv
-    set -gx GOENV_ROOT $XDG_CONFIG_HOME/goenv
-    try_prepend PATH $GOENV_ROOT/bin
-end
-
-if test -d $XDG_CONFIG_HOME/nodenv
-    set -gx NODENV_ROOT $XDG_CONFIG_HOME/nodenv
-    try_prepend PATH $NODENV_ROOT/bin
-end
-
 if type -q direnv
     direnv hook fish | source
 end
@@ -32,16 +18,12 @@ if type -q dircolors
     eval (dircolors --c-shell ~/.config/dircolors/dircolors)
 end
 
-if type -q pyenv
-    pyenv init - | source
-end
-
-if type -q goenv
-    goenv init - | source
-end
-
-if type -q nodenv
-    nodenv init - | source
+if test -d $XDG_DATA_HOME/asdf-core
+    set -gx ASDF_CONFIG_FILE $XDG_CONFIG_HOME/asdf/asdfrc
+    set -gx ASDF_DATA_DIR $XDG_DATA_HOME/asdf
+    set -gx ASDF_DEFAULT_TOOL_VERSIONS_FILENAME $XDG_CONFIG_HOME/asdf/tool-versions
+    try_prepend fish_complete_path $XDG_DATA_HOME/asdf-core/completions
+    source $XDG_DATA_HOME/asdf-core/asdf.fish
 end
 
 set -gx GO111MODULE on

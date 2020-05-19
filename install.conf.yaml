@@ -26,10 +26,8 @@
     ~/.config/fish: config/fish
     ~/.config/direnv: config/direnv
     ~/.config/dircolors: config/dircolors
-    ~/.config/pyenv: deps/pyenv
-    ~/.config/nodenv: deps/nodenv
-    ~/.config/nodenv/plugins/node-build: deps/node-build
-    ~/.config/goenv: deps/goenv
+    ~/.config/asdf: config/asdf
+    ~/.local/share/asdf-core: deps/asdf
     ~/.local/bin:
         glob: true
         path: local/bin/*
