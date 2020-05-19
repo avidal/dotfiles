@@ -32,6 +32,10 @@
       command: "command -q rg; or dnf install ripgrep"
       stdin: true
       stdout: true
+    -
+      command: "command -q starship; or dnf install starship"
+      stdin: true
+      stdout: true
 
 - link:
     ~/.config/nvim: config/nvim
@@ -39,6 +43,7 @@
     ~/.config/direnv: config/direnv
     ~/.config/dircolors: config/dircolors
     ~/.config/asdf: config/asdf
+    ~/.config/starship.toml: config/starship.toml
     ~/.local/share/asdf-core: deps/asdf
     ~/.local/bin:
         glob: true
