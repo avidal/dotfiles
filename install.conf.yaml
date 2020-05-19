@@ -38,11 +38,11 @@
       stdout: true
 
 - link:
-    ~/.config/nvim: config/nvim
-    ~/.config/fish: config/fish
-    ~/.config/direnv: config/direnv
-    ~/.config/dircolors: config/dircolors
     ~/.config/asdf: config/asdf
+    ~/.config/dircolors: config/dircolors
+    ~/.config/direnv: config/direnv
+    ~/.config/fish: config/fish
+    ~/.config/nvim: config/nvim
     ~/.config/starship.toml: config/starship.toml
     ~/.local/share/asdf-core: deps/asdf
     ~/.local/bin:
