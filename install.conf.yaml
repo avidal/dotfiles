@@ -20,6 +20,18 @@
       command: "command -q direnv; or dnf install direnv"
       stdin: true
       stdout: true
+    -
+      command: "command -q bat; or dnf install bat"
+      stdin: true
+      stdout: true
+    -
+      command: "command -q fd; or dnf install fd-find"
+      stdin: true
+      stdout: true
+    -
+      command: "command -q rg; or dnf install ripgrep"
+      stdin: true
+      stdout: true
 
 - link:
     ~/.config/nvim: config/nvim
