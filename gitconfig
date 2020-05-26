@@ -39,3 +39,5 @@
     prompt = false
 [status]
 	submoduleSummary = true
+[url "ssh://git@github.com/"]
+    insteadOf = https://github.com/
