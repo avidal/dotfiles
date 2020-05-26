@@ -5,8 +5,8 @@ function try_prepend --description 'try_prepend PATH /foo/bar'
     contains $argv[2] $$argv[1]; or set -p $argv[1] $argv[2]
 end
 
-try_prepend PATH /usr/local/sbin
-try_prepend PATH /usr/local/bin
+# reset PATH to defaults
+set PATH /usr/local/bin /usr/local/sbin /usr/bin /usr/sbin
 try_prepend PATH $HOME/.cargo/bin
 try_prepend PATH $HOME/.local/bin
 
