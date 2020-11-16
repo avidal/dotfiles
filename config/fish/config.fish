@@ -1,3 +1,6 @@
+# we don't need to see the greeting anymore
+set fish_greeting;
+
 set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
 set -q XDG_DATA_HOME; or set XDG_DATA_HOME ~/.local/share
 
