@@ -36,6 +36,10 @@
       command: "command -q starship; or dnf install starship"
       stdin: true
       stdout: true
+    -
+      command: "command -q procs; or dnf install procs"
+      stdin: true
+      stdout: true
 
 - link:
     ~/.config/asdf: config/asdf
@@ -43,6 +47,7 @@
     ~/.config/direnv: config/direnv
     ~/.config/fish: config/fish
     ~/.config/nvim: config/nvim
+    ~/.config/procs: config/procs
     ~/.config/starship.toml: config/starship.toml
     ~/.local/share/asdf-core: deps/asdf
     ~/.local/bin:
