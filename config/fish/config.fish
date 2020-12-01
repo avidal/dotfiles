@@ -1,8 +1,10 @@
 # we don't need to see the greeting anymore
 set fish_greeting;
 
-set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
-set -q XDG_DATA_HOME; or set XDG_DATA_HOME ~/.local/share
+set -q XDG_CONFIG_HOME; or set -gx XDG_CONFIG_HOME ~/.config
+set -q XDG_DATA_HOME; or set -gx XDG_DATA_HOME ~/.local/share
+set -q RUSTUP_HOME; or set -gx RUSTUP_HOME $XDG_DATA_HOME/rustup
+set -q CARGO_HOME; or set -gx CARGO_HOME $XDG_DATA_HOME/cargo
 
 function try_prepend --description 'try_prepend PATH /foo/bar'
     contains $argv[2] $$argv[1]; or set -p $argv[1] $argv[2]
@@ -10,7 +12,7 @@ end
 
 # reset PATH to defaults
 set PATH /usr/local/bin /usr/local/sbin /usr/bin /usr/sbin
-try_prepend PATH $HOME/.cargo/bin
+try_prepend PATH $CARGO_HOME/bin
 try_prepend PATH $HOME/.local/bin
 
 if type -q direnv
@@ -33,7 +35,7 @@ if test -d $XDG_DATA_HOME/asdf-core
     source $XDG_DATA_HOME/asdf-core/asdf.fish
 end
 
-set -gx GO111MODULE on
+set -gx EDITOR nvim
 
 alias la 'ls -al'
 alias ll 'ls -l'
@@ -47,7 +49,7 @@ alias svim 'sudo nvim'
 alias stail 'sudo tail'
 alias rmpyc 'rm **/*.pyc'
 alias ports 'sudo lsof -i -P -sTCP:LISTEN'
-alias dnf 'command sudo dnf'
+alias dnf 'command sudo /usr/bin/dnf'
 
 alias gs 'git st'
 alias gar 'git add -A (git root)'
