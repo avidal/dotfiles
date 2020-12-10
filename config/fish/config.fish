@@ -5,15 +5,37 @@ set -q XDG_CONFIG_HOME; or set -gx XDG_CONFIG_HOME ~/.config
 set -q XDG_DATA_HOME; or set -gx XDG_DATA_HOME ~/.local/share
 set -q RUSTUP_HOME; or set -gx RUSTUP_HOME $XDG_DATA_HOME/rustup
 set -q CARGO_HOME; or set -gx CARGO_HOME $XDG_DATA_HOME/cargo
+set -q AWS_HOME; or set -gx AWS_HOME $XDG_CONFIG_HOME/aws
+set -q KUBECTL_HOME; or set -gx KUBECTL_HOME $XDG_CONFIG_HOME/kubectl
 
 function try_prepend --description 'try_prepend PATH /foo/bar'
     contains $argv[2] $$argv[1]; or set -p $argv[1] $argv[2]
 end
 
 # reset PATH to defaults
-set PATH /usr/local/bin /usr/local/sbin /usr/bin /usr/sbin
+set PATH /usr/local/bin /usr/local/sbin /usr/bin /usr/sbin /bin /sbin
+
+# if we're on macos we can prefer coreutils gnubin as well as cask-managed google-cloud-sdk
+if test (uname -s) = "Darwin"
+    try_prepend PATH /usr/local/opt/coreutils/libexec/gnubin
+    try_prepend PATH /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin
+end
+
 try_prepend PATH $CARGO_HOME/bin
 try_prepend PATH $HOME/.local/bin
+
+set -gx DATADOG_ROOT ~/Code/datadog
+set -gx AWS_CONFIG_FILE $AWS_HOME/config
+set -gx AWS_SHARED_CREDENTIALS_FILE $AWS_HOME/credentials
+set -gx KUBECONFIG $KUBECTL_HOME/config
+
+# Create an out-of-the-way spot for the GOPATH, and symlink in $DATADOG_ROOT in the correct
+# location
+set -gx GOPATH $XDG_DATA_HOME/gopath
+if ! test -d $GOPATH
+    mkdir -p $GOPATH/src/github.com
+    ln -sf $DATADOG_ROOT $GOPATH/src/github.com/DataDog
+end
 
 if type -q direnv
     direnv hook fish | source
@@ -95,8 +117,8 @@ end
 
 function clone-work --description "clone-work <repo>"
     set repo $argv[1]; and set --erase argv[1];
-    git clone git@github.com:khan/$repo $HOME/Code/khan/$repo $argv
-    git config --file $HOME/Code/khan/$repo/.git/config --add user.email 'alexvidal@khanacademy.org'
+    git clone git@github.com:DataDog/$repo $HOME/Code/datadog/$repo $argv
+    git config --file $HOME/Code/datadog/$repo/.git/config --add user.email 'alex.vidal@datadoghq.com'
 end
 
 # no file completions for these commands
