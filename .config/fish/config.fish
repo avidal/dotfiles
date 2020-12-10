@@ -28,6 +28,7 @@ set -gx DATADOG_ROOT ~/Code/datadog
 set -gx AWS_CONFIG_FILE $AWS_HOME/config
 set -gx AWS_SHARED_CREDENTIALS_FILE $AWS_HOME/credentials
 set -gx KUBECONFIG $KUBECTL_HOME/config
+set -gx TERMINFO $XDG_DATA_HOME/terminfo
 
 # Create an out-of-the-way spot for the GOPATH, and symlink in $DATADOG_ROOT in the correct
 # location
