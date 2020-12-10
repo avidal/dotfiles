@@ -22,6 +22,9 @@ let g:go_fmt_command = "goimports"
 " disable :GoDef and :GoInfo, preferring coc.nvim (gd, gi)
 let g:go_def_mapping_enabled = 0
 
+let g:python_host_prog = "python2"
+let g:python3_host_prog = "python3"
+
 " filter out a few unnecessary files from the nerd tree
 let NERDTreeIgnore=['\.pyc$', '\~$']
 
