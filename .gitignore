@@ -9,12 +9,8 @@
 
 # Ignore all bundles
 .config/nvim/plugged
+.config/nvim/autoload/plug.vim
 .config/fish/plugged
 
 .config/fish/local.config.fish
 .config/fish/fish_variables
-.config/fish/plugged/fisher.fish
-
-# The following bits are copied over when running ./install
-# so can be ignored
-.config/nvim/autoload/plug.vim
