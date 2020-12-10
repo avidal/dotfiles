@@ -1,20 +1,20 @@
 # netrwhist history file
-config/nvim/.netrwhist
+.config/nvim/.netrwhist
 
-config/nvim/.tmp
-!config/nvim/.tmp/.gitkeep
+.config/nvim/.tmp
+!.config/nvim/.tmp/.gitkeep
 
-config/nvim/.undo
-!config/nvim/.undo/.gitkeep
+.config/nvim/.undo
+!.config/nvim/.undo/.gitkeep
 
 # Ignore all bundles
-config/nvim/plugged
-config/fish/plugged
+.config/nvim/plugged
+.config/fish/plugged
 
-config/fish/local.config.fish
-config/fish/fish_variables
-config/fish/functions/fisher.fish
+.config/fish/local.config.fish
+.config/fish/fish_variables
+.config/fish/plugged/fisher.fish
 
 # The following bits are copied over when running ./install
 # so can be ignored
-config/nvim/autoload/plug.vim
+.config/nvim/autoload/plug.vim

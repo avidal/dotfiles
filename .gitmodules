@@ -1,9 +1,3 @@
-[submodule "deps/dotbot"]
-	path = deps/dotbot
-	url = git://github.com/anishathalye/dotbot
-[submodule "deps/vim-plug"]
-	path = deps/vim-plug
-	url = git://github.com/junegunn/vim-plug
-[submodule "deps/asdf"]
-	path = deps/asdf
-	url = https://github.com/asdf-vm/asdf
+[submodule ".local/share/asdf-core"]
+	path = .local/share/asdf-core
+	url = git://github.com/asdf-vm/asdf
