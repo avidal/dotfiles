@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# install homebrew if it's missing
+if ! command -v brew >/dev/null 2>&1; then
+  echo "installing homebrew..."
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+brewfile="$HOME/.config/homebrew/Brewfile"
+if [ -f "$brewfile" ]; then
+  echo "installing homebrew packages from $brewfile..."
+  brew bundle --file "$brewfile"
+fi
+
+if ! grep -q "/usr/local/bin/fish" /etc/shells; then
+    echo "installing fish as a valid shell..."
+    echo /usr/local/bin/fish | sudo tee -a /etc/shells
+fi
