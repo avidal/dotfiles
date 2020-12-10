@@ -1,3 +1,5 @@
 python 3.9.0 2.7.18
 golang 1.15.5
 nodejs 14.15.1
+terraform 0.13.5
+ruby 2.5.1
