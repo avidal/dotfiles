@@ -4,13 +4,19 @@ set nocompatible
 
 filetype off
 
-call plug#begin('~/.config/nvim/plugged')
-
-if filereadable(expand('~/.config/nvim/bundle.vim'))
-    source ~/.config/nvim/bundle.vim
+" Install vim-plug if it's not already present
+if empty(glob("~/.config/nvim/autoload/plug.vim"))
+  silent! execute '!curl --create-dirs -fsSLo ~/.config/nvim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * silent! PlugInstall
 endif
 
-call plug#end()
+silent! if plug#begin('~/.config/nvim/plugged')
+  if filereadable(expand('~/.config/nvim/bundle.vim'))
+      source ~/.config/nvim/bundle.vim
+  endif
+
+  call plug#end()
+endif
 
 filetype plugin indent on
 
