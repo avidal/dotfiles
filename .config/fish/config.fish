@@ -7,6 +7,7 @@ set -q RUSTUP_HOME; or set -gx RUSTUP_HOME $XDG_DATA_HOME/rustup
 set -q CARGO_HOME; or set -gx CARGO_HOME $XDG_DATA_HOME/cargo
 set -q AWS_HOME; or set -gx AWS_HOME $XDG_CONFIG_HOME/aws
 set -q KUBECTL_HOME; or set -gx KUBECTL_HOME $XDG_CONFIG_HOME/kubectl
+set -q GOPATH; or set -gx GOPATH $XDG_DATA_HOME/gopath
 
 function try_prepend --description 'try_prepend PATH /foo/bar'
     contains $argv[2] $$argv[1]; or set -p $argv[1] $argv[2]
@@ -30,13 +31,12 @@ set -gx AWS_SHARED_CREDENTIALS_FILE $AWS_HOME/credentials
 set -gx KUBECONFIG $KUBECTL_HOME/config
 set -gx TERMINFO $XDG_DATA_HOME/terminfo
 
-# Create an out-of-the-way spot for the GOPATH, and symlink in $DATADOG_ROOT in the correct
-# location
-set -gx GOPATH $XDG_DATA_HOME/gopath
 if ! test -d $GOPATH
     mkdir -p $GOPATH/src/github.com
     ln -sf $DATADOG_ROOT $GOPATH/src/github.com/DataDog
 end
+
+try_prepend PATH $DATADOG_ROOT/devtools/bin
 
 if type -q direnv
     direnv hook fish | source
