@@ -43,3 +43,7 @@
     insteadOf = https://github.com/
 [pull]
 	ff = only
+[fetch]
+    prune = true
+[init]
+	defaultBranch = main
