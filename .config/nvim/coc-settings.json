@@ -1,15 +1,3 @@
 {
-  "coc.preferences.colorSupport": true,
-  "languageserver": {
-    "golang": {
-      "command": "gopls",
-      "rootPatterns": [
-        "go.mod",
-        ".git/"
-      ],
-      "filetypes": [
-        "go"
-      ]
-    }
-  }
+  "coc.preferences.colorSupport": true
 }
