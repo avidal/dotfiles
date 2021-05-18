@@ -46,10 +46,6 @@ if type -q dircolors
     eval (dircolors --c-shell ~/.config/dircolors/dircolors)
 end
 
-if type -q starship
-    starship init fish | source
-end
-
 if test -d $XDG_DATA_HOME/asdf-core
     set -gx ASDF_CONFIG_FILE $XDG_CONFIG_HOME/asdf/asdfrc
     set -gx ASDF_DATA_DIR $XDG_DATA_HOME/asdf
