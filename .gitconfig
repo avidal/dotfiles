@@ -1,6 +1,7 @@
 [user]
     name = Alex Vidal
     email = alex.vidal@gmail.com
+	signingkey = 49801044EFC3E5F6
 [color]
     diff = auto
     status = auto
@@ -10,6 +11,7 @@
     excludesfile = ~/.gitexcludes
     pager = delta
 	autocrlf = input
+	hooksPath = /usr/local/dd/global_hooks
 [alias]
     br = branch -a
     ci = commit
@@ -47,3 +49,5 @@
     prune = true
 [init]
 	defaultBranch = main
+[commit]
+	gpgsign = true

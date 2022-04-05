@@ -9,6 +9,9 @@ set -q AWS_HOME; or set -gx AWS_HOME $XDG_CONFIG_HOME/aws
 set -q KUBECTL_HOME; or set -gx KUBECTL_HOME $XDG_CONFIG_HOME/kubectl
 set -q GOPATH; or set -gx GOPATH $XDG_DATA_HOME/gopath
 
+# Store go binaries in our local bin directory
+set -q GOBIN; or set -gx GOBIN ~/.local/bin
+
 function try_prepend --description 'try_prepend PATH /foo/bar'
     contains $argv[2] $$argv[1]; or set -p $argv[1] $argv[2]
 end
@@ -28,12 +31,17 @@ try_prepend PATH $HOME/.local/bin
 set -gx DATADOG_ROOT ~/Code/datadog
 set -gx AWS_CONFIG_FILE $AWS_HOME/config
 set -gx AWS_SHARED_CREDENTIALS_FILE $AWS_HOME/credentials
+set -gx AWS_VAULT_KEYCHAIN_NAME login
+set -gx AWS_SESSION_TTL 24h
+set -gx AWS_ASSUME_ROLE_TTL 1h
 set -gx KUBECONFIG $KUBECTL_HOME/config
 set -gx TERMINFO $XDG_DATA_HOME/terminfo
+set -gx GOPRIVATE github.com/DataDog
+set -gx GPG_TTY (tty)
 
 if ! test -d $GOPATH
     mkdir -p $GOPATH/src/github.com
-    ln -sf $DATADOG_ROOT $GOPATH/src/github.com/DataDog
+    ln -s $DATADOG_ROOT $GOPATH/src/github.com/DataDog
 end
 
 try_prepend PATH $DATADOG_ROOT/devtools/bin
