@@ -1,16 +1,15 @@
 # netrwhist history file
-.config/nvim/.netrwhist
+dot_config/nvim/.netrwhist
 
-.config/nvim/.tmp
-!.config/nvim/.tmp/.gitkeep
+dot_config/nvim/.tmp
+dot_config/nvim/.tmp/.gitkeep
 
-.config/nvim/.undo
-!.config/nvim/.undo/.gitkeep
+dot_config/nvim/.undo
+!dot_config/nvim/.undo/.gitkeep
 
 # Ignore all bundles
-.config/nvim/plugged
-.config/nvim/autoload/plug.vim
-.config/fish/plugged
+dot_config/nvim/plugin/packer_compiled.lua
+dot_config/fish/plugged
 
-.config/fish/local.config.fish
-.config/fish/fish_variables
+dot_config/fish/local.config.fish
+dot_config/fish/fish_variables

@@ -1,7 +1,6 @@
 [user]
     name = Alex Vidal
     email = alex.vidal@gmail.com
-	signingkey = 49801044EFC3E5F6
 [color]
     diff = auto
     status = auto
@@ -10,8 +9,7 @@
 [core]
     excludesfile = ~/.gitexcludes
     pager = delta
-	autocrlf = input
-	hooksPath = /usr/local/dd/global_hooks
+    autocrlf = input
 [alias]
     br = branch -a
     ci = commit
@@ -22,7 +20,7 @@
     rebar = !git rebase -i $(git merge-base develop HEAD)
     locals = !git branch -vv | grep \": gone]\" | awk '{ print $1 }'
     fixup = !sh -c 'REV=$(git rev-parse $1) && git commit --fixup $@' -
-	subs = submodule update --init --recursive
+    subs = submodule update --init --recursive
 [push]
     default = simple
     followTags = true
@@ -40,14 +38,12 @@
     tool = vimdiff
     prompt = false
 [status]
-	submoduleSummary = true
+    submoduleSummary = true
 [url "git@github.com:"]
     insteadOf = https://github.com/
 [pull]
-	ff = only
+    ff = only
 [fetch]
     prune = true
 [init]
-	defaultBranch = main
-[commit]
-	gpgsign = true
+    defaultBranch = main

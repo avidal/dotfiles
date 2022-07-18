@@ -1,5 +1,5 @@
-python 3.9.0 2.7.18
-golang 1.17.2
+python 3.10.5 2.7.18
+golang 1.18.4
 nodejs 14.15.1
 terraform 0.13.5
 ruby 2.5.1

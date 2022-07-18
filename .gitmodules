@@ -1,4 +1,0 @@
-[submodule ".local/share/asdf-core"]
-	path = .local/share/asdf-core
-	url = git://github.com/asdf-vm/asdf
-	branch = v0.9.0
