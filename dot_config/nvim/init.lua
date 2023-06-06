@@ -19,4 +19,3 @@ require('plugins/nvim-cmp')
 require('plugins/nvim-lspconfig')
 require('plugins/nvim-treesitter')
 require('plugins/alpha-nvim')
-
