@@ -19,10 +19,14 @@ end
 # reset PATH to defaults
 set PATH /usr/local/bin /usr/local/sbin /usr/bin /usr/sbin /bin /sbin
 
-# if we're on macos we can prefer coreutils gnubin as well as cask-managed google-cloud-sdk
-if test (uname -s) = "Darwin"
-    try_prepend PATH /usr/local/opt/coreutils/libexec/gnubin
-    try_prepend PATH /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin
+# if we have homebrew installed, let's push its path and some optional extras
+if type -q /opt/homebrew/bin/brew
+
+    set BREWPATH /opt/homebrew
+
+	try_prepend PATH $BREWPATH/opt/coreutils/libexec/gnubin
+    try_prepend PATH $BREWPATH/sbin
+    try_prepend PATH $BREWPATH/bin
 end
 
 try_prepend PATH $CARGO_HOME/bin
