@@ -45,13 +45,13 @@ end
 return packer.startup({
   function(use)
     use 'wbthomason/packer.nvim' -- packer can manage itself
-  
+
     -- File explorer
     use 'kyazdani42/nvim-tree.lua'
-  
+
     -- Indent line
     use 'lukas-reineke/indent-blankline.nvim'
-  
+
     -- Autopair
     use {
       'windwp/nvim-autopairs',
@@ -59,42 +59,44 @@ return packer.startup({
         require('nvim-autopairs').setup{}
       end
     }
-  
+
     -- Icons
     use 'kyazdani42/nvim-web-devicons'
-  
-    -- Tag viewer
-    use 'preservim/tagbar'
-  
+
     -- Treesitter interface
     use 'nvim-treesitter/nvim-treesitter'
-  
+
     -- Color schemes
     use 'navarasu/onedark.nvim'
     use 'tanvirtin/monokai.nvim'
     use { 'rose-pine/neovim', as = 'rose-pine' }
-  
-    -- LSP
-    use 'neovim/nvim-lspconfig'
-  
-    -- Autocomplete
+
+    -- LSP and autocompletion
     use {
-      'hrsh7th/nvim-cmp',
+      'VonHeikemen/lsp-zero.nvim',
+      branch = 'v2.x',
       requires = {
-        'L3MON4D3/LuaSnip',
-        'hrsh7th/cmp-nvim-lsp',
-        'hrsh7th/cmp-path',
-        'hrsh7th/cmp-buffer',
-        'saadparwaiz1/cmp_luasnip',
-      },
+        {'neovim/nvim-lspconfig'},
+        {
+          'williamboman/mason.nvim',
+          run = function()
+            pcall(vim.cmd, 'MasonUpdate')
+          end,
+        },
+        {'williamboman/mason-lspconfig.nvim'},
+
+        {'hrsh7th/nvim-cmp'},
+        {'hrsh7th/cmp-nvim-lsp'},
+        {'L3MON4D3/LuaSnip'},
+      }
     }
-  
+
     -- Statusline
     use {
       'feline-nvim/feline.nvim',
       requires = { 'kyazdani42/nvim-web-devicons' },
     }
-  
+
     -- git labels
     use {
       'lewis6991/gitsigns.nvim',
@@ -103,13 +105,13 @@ return packer.startup({
         require('gitsigns').setup{}
       end
     }
-  
+
     -- Dashboard (start screen)
     use {
       'goolord/alpha-nvim',
       requires = { 'kyazdani42/nvim-web-devicons' },
     }
-  
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then
