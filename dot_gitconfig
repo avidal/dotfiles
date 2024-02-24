@@ -27,15 +27,15 @@
 [rerere]
     enabled = true
 [mergetool "vimdiff"]
-    cmd = vim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+    cmd = nvim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
 [mergetool "fugitive"]
-    cmd = vim -f -c \"Gdiff\" \"$MERGED\"
+    cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
 [merge]
-    tool = vimdiff
+    tool = fugitive
     prompt = false
     conflictstyle = diff3
 [diff]
-    tool = vimdiff
+    tool = fugitive
     prompt = false
 [status]
     submoduleSummary = true

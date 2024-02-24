@@ -25,6 +25,7 @@ if type -q /opt/homebrew/bin/brew
     set BREWPATH /opt/homebrew
 
 	try_prepend PATH $BREWPATH/opt/coreutils/libexec/gnubin
+	try_prepend PATH $BREWPATH/opt/grep/libexec/gnubin
     try_prepend PATH $BREWPATH/sbin
     try_prepend PATH $BREWPATH/bin
 end

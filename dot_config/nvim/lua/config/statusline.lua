@@ -16,8 +16,7 @@ if not status_ok then
   return
 end
 
--- Set colorscheme (from core/colors.lua/colorscheme_name)
-local colors = require('core/colors').onedark_dark
+local colors = require('config.colors').onedark_dark
 
 local vi_mode_colors = {
   NORMAL = colors.cyan,
