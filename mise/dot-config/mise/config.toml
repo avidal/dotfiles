@@ -1,0 +1,27 @@
+[tools]
+# necessary for mise completion script
+usage = "latest"
+
+# languages
+python = "3.12"
+go = "1.22"
+node = "22.1"
+
+# tools
+# normally i'd get these via system packages but they can be woefully out of date
+"go:golang.org/x/tools/gopls" = "latest"
+"go:mvdan.cc/gofumpt" = "latest"
+"cargo:ubi" = "latest"
+"cargo:cargo-binstall" = "latest"
+"cargo:ripgrep" = "latest"
+"cargo:bat" = "latest"
+"cargo:fd-find" = "latest"
+"npm:pyright" = "latest"
+"pipx:black" = "latest"
+lua-language-server = "latest"
+"cargo:git-delta" = "latest"
+
+[settings]
+experimental = true
+go_default_packages_file = "/home/alex/.config/mise/default-packages-go"
+python_default_packages_file = "/home/alex/.config/mise/default-packages-python"

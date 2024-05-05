@@ -1,0 +1,49 @@
+[user]
+    name = Alex Vidal
+    email = alex.vidal@gmail.com
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    ui = auto
+[core]
+    excludesfile = ~/.gitexcludes
+    pager = delta
+    autocrlf = input
+[alias]
+    br = branch -a
+    ci = commit
+    st = status -s --ignore-submodules
+    co = checkout
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    root = !pwd
+    rebar = !git rebase -i $(git merge-base develop HEAD)
+    locals = !git branch -vv | grep \": gone]\" | awk '{ print $1 }'
+    fixup = !sh -c 'REV=$(git rev-parse $1) && git commit --fixup $@' -
+    subs = submodule update --init --recursive
+[push]
+    default = simple
+    followTags = true
+[rerere]
+    enabled = true
+[mergetool "vimdiff"]
+    cmd = nvim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+[mergetool "fugitive"]
+    cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
+[merge]
+    tool = fugitive
+    prompt = false
+    conflictstyle = diff3
+[diff]
+    tool = fugitive
+    prompt = false
+[status]
+    submoduleSummary = true
+[url "git@github.com:"]
+    insteadOf = https://github.com/
+[pull]
+    ff = only
+[fetch]
+    prune = true
+[init]
+    defaultBranch = main

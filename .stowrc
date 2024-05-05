@@ -1,0 +1,3 @@
+-v # print what's being linked or unlinked
+--dotfiles # allows for using dot-<name> instead of .<name>
+--no-folding # always make direct file links not directory links

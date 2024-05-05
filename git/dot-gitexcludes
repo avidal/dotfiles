@@ -1,0 +1,7 @@
+*.sw[po]
+*.bak
+*.tmp
+*~
+*.py[co]
+.DS_Store
+Thumbs.db
