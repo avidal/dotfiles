@@ -47,3 +47,12 @@
     prune = true
 [init]
     defaultBranch = main
+
+# override any global config with the values in ~/.config/datadog/gitconfig
+# if we're in a repository owned by Datadog
+[includeIf "hasconfig:remote.*.url:git@github.com:DataDog/*"]
+    path = ~/.config/datadog/gitconfig
+
+# additional work specific repositories
+[includeIf "hasconfig:remote.*.url:git@github.com:tilt-dev/tilt"]
+    path = ~/.config/datadog/gitconfig

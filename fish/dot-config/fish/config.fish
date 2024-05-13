@@ -92,22 +92,16 @@ function clone-git --description "clone-git <example.com> <user/repo>"
     set host $argv[1]; set --erase argv[1];
     set repo $argv[1]; set --erase argv[1];
     git clone git@$host:$repo $HOME/Code/$repo $argv
-    and git config --file $HOME/Code/$repo/.git/config \
-        --add user.email 'alex@heyviddy.com'
 end
 
 function clone-github --description "clone-github <user/repo>"
     set repo $argv[1]; and set --erase argv[1];
     git clone git@github.com:$repo $HOME/Code/$repo $argv
-    and git config --file $HOME/Code/$repo/.git/config \
-        --add user.email 'alex@heyviddy.com'
 end
 
 function clone-work --description "clone-work <repo>"
     set repo $argv[1]; and set --erase argv[1];
     git clone git@github.com:DataDog/$repo $HOME/Code/datadog/$repo $argv
-    and git config --file $HOME/Code/datadog/$repo/.git/config \
-        --add user.email 'alex.vidal@datadoghq.com'
 end
 
 # no file completions for these commands
