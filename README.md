@@ -55,6 +55,12 @@ $ stow git
 Install the global toolchains with mise:
 
 ```
+# First install the tools
+$ mise install go python node
+
+# Then install the rest
+# We do this because some of our tools leverage toolchains that need to be installed first
+# such as gopls and pipx
 $ mise install
 ```
 
